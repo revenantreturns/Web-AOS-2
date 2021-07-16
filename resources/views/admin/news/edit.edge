@@ -1,0 +1,33 @@
+@layout('admin/layouts/app')
+
+@section('content')
+
+<div class="card card-body border-0 shadow mt-2">
+  <form action="{{route('admin.news.update', { id: getNew.id }, { qs: { _method: 'PUT' }})}}" method="POST">
+    {{ csrfField() }}
+    <input type="hidden" name="type" value="1">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Titulo</label>
+    <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{ getNew.title }}" placeholder="Titulo">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Author</label>
+    <input type="text" class="form-control" name="writer" id="exampleFormControlInput1" value="{{ getNew.writer }}" readonly>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Conteudo</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" name="content">{{ getNew.content }}</textarea>
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">
+      Validar
+    </button>
+  </div>
+  </form>
+</div>
+
+<script src="//cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
+<script>
+   CKEDITOR.replace('content');
+</script>
+@endsection

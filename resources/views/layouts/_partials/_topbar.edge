@@ -1,0 +1,35 @@
+<ul class="nav bg-dark">
+	<li class="nav-item container">
+		<ul class="nav justify-content-start bg-dark">
+			@if(auth.isLoggedIn)
+			<li class="nav-item">
+				<a
+					class="nav-link text-white"
+					href="{{route('admin.dashboard.index')}}" target="_new">
+					<strong> Bem vindo {{ auth.user.username }} </strong>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					class="nav-link text-white"
+					href="{{route('logout')}}">
+					<strong> Sair </strong>
+				</a>
+			</li>
+			@else
+			<li class="nav-item">
+				<a
+					class="nav-link text-white"
+					href="{{route('login')}}">
+					<strong> Login </strong>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-white" href="{{route('newaccount')}}">
+					<strong> Cadastro </strong>
+				</a>
+			</li>
+			@endif
+		</ul>
+	</li>
+</ul>

@@ -1,0 +1,15 @@
+@layout('admin/layouts/app')
+
+@section('content')
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12">
+      <h2>{{ getNew.title }}</h2>
+      <p><small>Por <b>{{ getNew.writer }}</b> em {{ Date(getNew.created_at) }}</small></p>
+    </div>
+    <div class="col-12">
+      {{{ getNew.content  }}}
+    </div>
+  </div>
+</div>
+@endsection

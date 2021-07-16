@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>VxAOS 2.0</title>
+		<script src="{{ asset('assets/admin.js') }}"></script>
+		<link rel="stylesheet" type="text/css" href="{{
+			asset('assets/admin.css')
+			}}">
+	</head>
+
+	<body>
+        @include('admin/layouts/_partials/_navbar')
+          <main class="content">
+            <div class="row">
+              <div class="col-auto">
+                @!section('content')
+              </div>
+            </div>
+          </main>
+
+	</body>
+
+</html>

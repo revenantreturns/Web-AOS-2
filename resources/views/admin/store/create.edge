@@ -1,0 +1,78 @@
+@layout('admin/layouts/app')
+
+@section('content')
+<div class="row">
+	<div class="col-12">
+		<div class="card card-body border-0 shadow mb-4">
+			<h2 class="h5 mb-4">Novo item</h2>
+			<form action="{{ route('admin.store.store') }}" method="post" enctype="multipart/form-data">
+        {{ csrfField() }}
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<div>
+							<label for="title">Titulo</label>
+							<input class="form-control" id="title" name="name" type="text"
+								placeholder="Titulo do item" required>
+						</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<div>
+							<label for="price">Preço em Cash</label>
+							<input class="form-control" id="price" name="price" type="text" placeholder="Preço do item" required>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col-md-6 mb-3">
+						<label for="category">Categoria</label>
+						<select class="form-select mb-0" id="category" name="category">
+							<option selected value="0">VIP</option>
+							<option value="1">Itens Gerais</option>
+							<option value="2">Armas</option>
+							<option value="3">Protetores</option>
+						</select>
+					</div>
+          <div class="col-md-6 mb-3">
+						<div class="form-group">
+							<label for="iditem">ID do Item</label>
+							<input class="form-control" id="iditem" name="item_id" type="number" min="0" value="0" required>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<div class="form-group">
+							<label for="qty">Quantia</label>
+							<input class="form-control" id="qty" name="amount" type="number" min="1" value="1"
+								placeholder="Quantia de itens/dias vip" required>
+						</div>
+					</div>
+					<div class="col-md-6 mb-3">
+						<div class="mb-3">
+              <label for="formFile" class="form-label">Imagem</label>
+              <input class="form-control" name="cover_image" type="file" accept="image/*" id="formFile">
+            </div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-12">
+						<div class="form-group">
+							<label for="qty">Descrição</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="mt-3">
+					<button class="btn btn-gray-800 mt-2 animate-up-2" type="submit">Validar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script src="//cdn.ckeditor.com/4.16.1/full/ckeditor.js"></script>
+<script>
+   CKEDITOR.replace('description');
+</script>
+@endsection

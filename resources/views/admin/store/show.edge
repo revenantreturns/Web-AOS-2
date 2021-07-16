@@ -1,0 +1,24 @@
+@layout('admin/layouts/app')
+
+@section('content')
+<div class="card card-body border-0 shadow mt-2">
+  <div class="row">
+    <div class="col-12">
+      <img src="{{ asset(''+ store.url_image  +'') }}" class="img-responsive">
+    </div>
+    <div class="col-12">
+      <h3>{{ store.name }}</h3>
+      Valor: {{ store.price }} cash <br>
+      Quantia: x{{ store.amount }} <br>
+      ID Item: {{ store.item_id }} <br>
+    </div>
+    <div class="col-12">
+      Comprados: {{ store.purchased }}
+    </div>
+    <hr class="mt-3">
+    <div class="col-12 col-md-6">
+      {{{ store.description }}}
+    </div>
+  </div>
+</div>
+@endsection

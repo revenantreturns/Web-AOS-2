@@ -1,0 +1,45 @@
+@layout('layouts/app')
+
+@section('content')
+<div class="row justify-content-md-center py-5">
+  <div class="col-12 col-md-4">
+  </div>
+  <div class="col-12 col-md-4">
+    <form action="{{ route('register') }}" class="form-floating" method="POST">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="username" minlength="3" maxlength="12" placeholder="Username" autocomplete="off">
+        <label for="floatingInput">Login</label>
+        @if(flashMessages.has('errors.username'))
+        <div class="alert alert-warning my-2" role="alert">
+          O username escolhido é inválido
+        </div>
+        @endif
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email">
+        <label for="floatingInput">Email</label>
+        @if(flashMessages.has('errors.email'))
+        <div class="alert alert-warning my-2" role="alert">
+          O email escolhido é inválido
+        </div>
+        @endif
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingInput" name="password" minlength="3" maxlength="12" placeholder="Password">
+        <label for="floatingInput">Senha</label>
+        @if(flashMessages.has('errors.password'))
+        <div class="alert alert-warning my-2" role="alert">
+          O password escolhido é inválido
+        </div>
+        @endif
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-lg btn-outline-info">Validar</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-12 col-md-4">
+    <img src="{{asset('assets/images/login-face.jpg')}}" style="margin-top:-80px">
+  </div>
+</div>
+@endsection

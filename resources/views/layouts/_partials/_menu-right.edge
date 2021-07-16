@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12 navbar-custom p-3 mb-3">
+    <table class="table text-white">
+      <thead>
+        <tr>
+          <th colspan="3"><i class="fas fa-trophy"></i>&nbsp; Top 5 Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        @each((actor, key) in actors)
+          <tr>
+            <td scope="row">
+              {{ key + 1  }}
+            </th>
+            <td>
+              <small>
+                <i class="fas fa-award"></i>&nbsp;
+                {{ actor.name }}
+              </small>
+            </td>
+            <td>
+              {{ actor.level }}
+            </td>
+          </tr>
+        @endeach
+      </tbody>
+    </table>
+  </div>
+  <div class="col-12 navbar-custom p-3 mb-3">
+    <strong><small><i class="fas fa-search"></i>&nbsp; Busca</small></strong>
+    <form method="POST">
+        <input type="search" class="form-control my-2" id="floatingInput" name="username" minlength="3" maxlength="12" placeholder="Buscar" autocomplete="off">
+    </form>
+  </div>
+</div>

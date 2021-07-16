@@ -1,0 +1,40 @@
+@layout('layouts/app')
+
+@section('content')
+<div class="row justify-content-md-center py-5">
+  <div class="col-12 col-md-4">
+  </div>
+  <div class="col-12 col-md-4">
+    <form action="{{ route('auth') }}" class="needs-validation form-floating" method="POST">
+      {{ csrfField() }}
+      <input type="hidden" value="{{ csrfToken }}" name="_token">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="username" minlength="3" maxlength="14" placeholder="Login" autocomplete="off">
+        <label for="floatingInput">Login</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" name="password" minlength="3" maxlength="14" placeholder="Password">
+        <label for="floatingPassword">Senha</label>
+      </div>
+      <div class="mb-0 form-check">
+        @if(flashMessages.has('errors'))
+        <script>
+          Swal.fire({
+            title: 'Error!',
+            text: 'Do you want to continue',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
+        </script>
+        @endif
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-lg btn-outline-info">Logar</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-12 col-md-4">
+    <img src="{{asset('assets/images/login-face.jpg')}}" style="margin-top:-80px">
+  </div>
+</div>
+@endsection

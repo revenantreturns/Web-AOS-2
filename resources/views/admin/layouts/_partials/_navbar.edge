@@ -1,0 +1,120 @@
+<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
+  <a class="navbar-brand me-lg-5" href="../../index.html">
+      <img class="navbar-brand-dark" src="{{ asset('assets/images/logo-circle.png') }}" alt="Volt logo" />
+  </a>
+  <div class="d-flex align-items-center">
+      <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  </div>
+</nav>
+
+<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
+<div class="sidebar-inner px-4 pt-3">
+  <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+    <div class="d-flex align-items-center">
+      <div class="avatar-lg me-4">
+        <img src="{{ asset('assets/images/logo-circle.png') }}" class="card-img-top rounded-circle border-white"
+          alt="Bonnie Green">
+      </div>
+      <div class="d-block">
+        <h2 class="h5 mb-3">VxAOS 2.0 Admin</h2>
+        <a href="../../pages/examples/sign-in.html" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
+          <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+          Sign Out
+        </a>
+      </div>
+    </div>
+    <div class="collapse-close d-md-none">
+      <a href="#sidebarMenu" data-bs-toggle="collapse"
+          data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="true"
+          aria-label="Toggle navigation">
+          <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a>
+    </div>
+  </div>
+  <ul class="nav flex-column pt-3 pt-md-0">
+    <li class="nav-item">
+      <a href="../../index.html" class="nav-link d-flex align-items-center">
+        <span class="sidebar-icon">
+          VxAOS 2.0 Admin
+        </span>
+      </a>
+    </li>
+    <li class="nav-item  active ">
+      <a href=" {{ route('admin.dashboard.index') }} " class="nav-link">
+        <span class="sidebar-icon">
+          <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
+        </span>
+        <span class="sidebar-text">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <span
+        class="nav-link  collapsed  d-flex justify-content-between align-items-center"
+        data-bs-toggle="collapse" data-bs-target="#news-admin">
+        <span>
+          <span class="sidebar-icon">
+            <svg class="icon icon-xs me-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M19.875 3H4.125C2.953 3 2 3.897 2 5v14c0 1.103.953 2 2.125 2h15.75C21.047 21 22 20.103 22 19V5c0-1.103-.953-2-2.125-2zm0 16H4.125c-.057 0-.096-.016-.113-.016c-.007 0-.011.002-.012.008L3.988 5.046c.007-.01.052-.046.137-.046h15.75c.079.001.122.028.125.008l.012 13.946c-.007.01-.052.046-.137.046z" fill="#626262"/><path d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"/></svg>
+          </span>
+          <span class="sidebar-text">Noticias</span>
+        </span>
+        <span class="link-arrow">
+          <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+        </span>
+      </span>
+      <div class="multi-level collapse "
+        role="list" id="news-admin" aria-expanded="false">
+        <ul class="flex-column nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ route('admin.news.index') }}">
+              <span class="sidebar-text">Listar</span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ route('admin.news.create') }}">
+              <span class="sidebar-text">Nova Noticia</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <span
+        class="nav-link  collapsed  d-flex justify-content-between align-items-center"
+        data-bs-toggle="collapse" data-bs-target="#store-admin">
+        <span>
+          <span class="sidebar-icon">
+            <svg class="icon icon-xs me-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M464 448V267.85a104.76 104.76 0 0 1-33.56 6.58c-1.18 0-2.3.05-3.4.05a108 108 0 0 1-56.86-16a108 108 0 0 1-56.85 16a106.16 106.16 0 0 1-56.51-16.2a107.84 107.84 0 0 1-57.2 16.2a106.14 106.14 0 0 1-56.85-16.42a106.14 106.14 0 0 1-56.85 16.42c-1.09 0-2.19 0-3.37-.05h-.06A104.66 104.66 0 0 1 48 267.49V448H16v32h480v-32zm-240-64h-96v-76a4 4 0 0 1 4-4h88a4 4 0 0 1 4 4zm160 64h-80V308a4 4 0 0 1 4-4h72a4 4 0 0 1 4 4z" fill="#626262"/><path d="M492.57 170.28L445.89 64C432 32 432 32 400 32H112c-32 0-32 0-45.94 32L19.38 170.28c-9 19.41 2.89 39.34 2.9 39.35l.41.66c.42.66 1.13 1.75 1.62 2.37c.1.13.19.27.28.4l5.24 6.39l5.31 5.14l.42.36a69.65 69.65 0 0 0 9.44 6.78v.05a74 74 0 0 0 36 10.67h2.47a76.08 76.08 0 0 0 51.89-20.31a72.38 72.38 0 0 0 5.77-6a74.18 74.18 0 0 0 5.78 6a76.08 76.08 0 0 0 51.89 20.31c23.28 0 44.07-10 57.63-25.56a.11.11 0 0 1 .15 0l5.66 5.26a76.09 76.09 0 0 0 51.9 20.31c23.29 0 44.11-10 57.66-25.61c13.56 15.61 34.37 25.61 57.67 25.61h2.49a71.35 71.35 0 0 0 35-10.7c.95-.57 1.86-1.17 2.78-1.77A71.33 71.33 0 0 0 488 212.17l2-3c.9-2.04 11.21-20.3 2.57-38.89z"/></svg>
+          </span>
+          <span class="sidebar-text">Store</span>
+        </span>
+        <span class="link-arrow">
+          <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+        </span>
+      </span>
+      <div class="multi-level collapse "
+        role="list" id="store-admin" aria-expanded="false">
+        <ul class="flex-column nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ route('admin.store.index') }}">
+              <span class="sidebar-text">Listar Itens</span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ route('admin.store.create') }}">
+              <span class="sidebar-text">Novo Item</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a href="{{ route('home') }}" target="_new"
+        class="btn btn-danger d-flex align-items-center justify-content-center btn-upgrade-pro">
+        <span>Ir para o site</span>
+      </a>
+    </li>
+  </ul>
+</div>
+</nav>

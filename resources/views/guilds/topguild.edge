@@ -1,0 +1,42 @@
+@layout('layouts/app')
+
+@section('content')
+<table class="table text-white">
+	<thead>
+		<tr>
+			<th colspan="3"><i class="fas fa-trophy"></i>&nbsp; Guilds</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@each((guild, key) in topguild)
+		<tr>
+			<td scope="row">
+				{{{  guild.icon  }}}
+			</th>
+			<td>
+				<small>
+					{{ guild.name }}
+				</small>
+			</td>
+			<td>
+				{{ guild.leader }}
+			</td>
+		</tr>
+		@endeach
+	</tbody>
+</table>
+
+<hr />
+<ul class="pagination">
+	@each(anchor in topguild.getUrlsForRange(1, topguild.lastPage))
+	<li class="page-item" aria-current="page">
+		<a class="text-decoration-none" href="{{ anchor.url }}">
+			<span class="page-link custom text-white">{{ anchor.page }}</span>
+		</a>
+	</li>
+	@endeach
+</ul>
+@endsection
+
+

@@ -1,0 +1,42 @@
+@layout('layouts/app')
+
+@section('content')
+<div class="row">
+	<div class="col-12 col-md-9">
+		<img src="{{asset('assets/images/store/banner.jpg')}}" class="img-responsive">
+		<p class="text-white mt-4">
+			<strong>
+				A moeda virtual é um sistema de troca entre jogadores, sem taxa cobrada pela empresa.
+			</strong>
+		</p>
+		<p class="text-white">
+			<strong>
+				Ela lhe permite comprar e gastar no jogo instantaneamente, podendo ser usadas imediatamente na loja (assinatura, serviços, itens do jogo...).
+			</strong>
+		</p>
+    @if(auth.isLoggedIn)
+      @include('store/_partials/prices')
+    @else
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-3">
+        <a href=" {{ route('login') }} ">
+          <button class="btn  btn-outline-info btn-lg">
+            Logar-se
+          </button>
+        </a>
+      </div>
+    </div>
+    @endif
+	</div>
+	<div class="col-12 col-md-3">
+		<div class="alert alert-info" role="alert">
+			<i class="fas fa-shield-alt"></i>
+			<strong>Compre com segurança</strong>
+		</div>
+		<div class="alert alert-dark" role="alert">
+			<i class="fas fa-credit-card"></i>
+			<strong>Todas as formas de pagamento</strong>
+		</div>
+	</div>
+</div>
+@endsection
