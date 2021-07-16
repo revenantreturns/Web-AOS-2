@@ -3,10 +3,13 @@ import Accounts from 'App/Models/Accounts'
 import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import Mail from '@ioc:Adonis/Addons/Mail'
 import Env from '@ioc:Adonis/Core/Env'
+import Configs from 'App/Models/Configs'
 
 export default class RegistersController {
   public async register({ auth, session, request, response }: HttpContextContract) {
     request.only(['username', 'email', 'password'])
+
+    const config = await Configs.findOrFail(1)
 
     const ValidatorSchema = schema.create({
       username: schema.string({ trim: true }, [
@@ -27,12 +30,12 @@ export default class RegistersController {
       ])
     })
 
-    const ValidatedData = await request.validate({schema: ValidatorSchema})
+    const ValidatedData = await request.validate({ schema: ValidatorSchema })
 
     session.flash('errors', {
-      username: 'Post title is required',
-      email: 'Post title is required',
-      password: 'Post title is required',
+      username: '',
+      email: '',
+      password: '',
     })
 
     const account = await Accounts.create({
@@ -45,8 +48,17 @@ export default class RegistersController {
       message
         .from(Env.get('SMTP_USERNAME'))
         .to(ValidatedData.email)
-        .subject('Bem vindo!')
-        .htmlView('emails/welcome', { name: ValidatedData.username })
+        .subject(config.title.concat(' - Conta criada!'))
+        .htmlView('emails/welcome', {
+          user: {
+            username: ValidatedData.username,
+            email: ValidatedData.email,
+          },
+          url: {
+            url: Env.get('HOST'),
+            download: Env.get('HOST').concat("/download")
+          }
+        })
     })
 
     await auth.use('web').login(account)
@@ -54,7 +66,7 @@ export default class RegistersController {
     return response.redirect().toRoute('login')
   }
 
-  public async newaccount({view}: HttpContextContract) {
+  public async newaccount({ view }: HttpContextContract) {
     return view.render('auth/register')
   }
 }

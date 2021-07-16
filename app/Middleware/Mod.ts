@@ -12,7 +12,7 @@ export default class ModMiddleware {
       guardLastAttempted = guard
 
       if (await auth.use(guard).check()) {
-        if(auth.user?.group >= 1 )
+        if(auth.user?.group == 1 || auth.user?.group == 2)
         {
           auth.defaultGuard = guard
           return true

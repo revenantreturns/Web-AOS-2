@@ -6,6 +6,7 @@
   </div>
   <div class="col-12 col-md-4">
     <form action="{{ route('register') }}" class="form-floating" method="POST">
+      {{ csrfField() }}
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingInput" name="username" minlength="3" maxlength="12" placeholder="Username" autocomplete="off">
         <label for="floatingInput">Login</label>
