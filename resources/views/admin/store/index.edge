@@ -1,116 +1,103 @@
 @layout('admin/layouts/app')
 
 @section('content')
-<div class="card card-body border-0 shadow mt-2">
-	<table class="table">
-		<thead>
-			<tr>
-				<th colspan="5"><i class="fas fa-trophy"></i>&nbsp; Store</th>
-			</tr>
-		</thead>
-		<tbody>
-
-			@if(flashMessages.has('deleted'))
-			<script>
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Item deletado',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    </script>
-			@endif
-
-			@if(flashMessages.has('updated'))
-			<script>
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Item atualizado com sucesso',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    </script>
-			@endif
-
-			@if(flashMessages.has('created'))
-			<script>
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Item criado!',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    </script>
-			@endif
-
-			@each(store in stores)
-
-			<tr>
-				<td>
-					<img src="{{ asset(''+ store.url_image +'') }}" width="80">
-				</td>
-				<td>
-					<a href="{{ route('admin.store.show', { id: store.id }) }}"><strong>{{
-							store.name }} <br> {{ store.price }} cash <br> x{{ store.amount }}</strong></a>
-				</td>
-				<td>
-					<a href="{{ route('admin.store.edit', { id: store.id }) }}">
-						<button class="btn btn-success">
-							<svg xmlns="http://www.w3.org/2000/svg"
-								xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-								focusable="false" width="1em" height="1em" style="-ms-transform:
-								rotate(360deg); -webkit-transform: rotate(360deg); transform:
-								rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1200
-								1200"><path d="M0 0v1200h1200V424.292l-196.875
-									196.875v381.958h-806.25v-806.25h381.958L775.708 0H0zm1050 0l-76.831
-									76.831l150 150L1200 150L1050 0zM936.914 113.086L497.168 552.832l150
-									150l439.746-439.746l-150-150zM441.943
-									622.339c-2.225.034-4.493.195-6.738.366v142.09h142.09c0-38.708-18.492-78.039-47.314-105.542c-23.842-22.751-54.675-37.428-88.038-36.914z"
-									fill="#fff" /></svg>
-							</button>
-						</a>
-					</td>
-					<td>
-						<form action="{{route('admin.store.destroy', { id: store.id }, { qs: {
-							_method: 'DELETE' }})}}" method="POST">
-							{{ csrfField() }}
-							<button class="btn btn-danger" type="submit">
-								<svg xmlns="http://www.w3.org/2000/svg"
-									xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
-									focusable="false" width="1em" height="1em" style="-ms-transform:
-									rotate(360deg); -webkit-transform: rotate(360deg); transform:
-									rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20
-									20"><g fill="none"><path d="M10 1.25a2.75 2.75 0 0 1 2.739
-											2.5H17a.75.75 0 0 1 .102 1.493L17 5.25h-.583L15.15 16.23A2 2 0 0 1
-											13.163 18H6.837a2 2 0 0 1-1.987-1.77L3.582 5.25H3a.75.75 0 0
-											1-.743-.648L2.25 4.5a.75.75 0 0 1 .648-.743L3 3.75h4.261A2.75 2.75 0
-											0 1 10 1.25zM8.5 7.5c-.245 0-.45.155-.492.359L8
-											7.938v6.125l.008.078c.042.204.247.359.492.359s.45-.155.492-.359L9
-											14.062V7.939l-.008-.08C8.95 7.656 8.745 7.5 8.5 7.5zm3 0c-.245
-											0-.45.155-.492.359L11
-											7.938v6.125l.008.078c.042.204.247.359.492.359s.45-.155.492-.359l.008-.079V7.939l-.008-.08c-.042-.203-.247-.358-.492-.358zM10
-											2.75c-.605 0-1.11.43-1.225 1h2.45c-.116-.57-.62-1-1.225-1z"
-											fill="#fff" /></g></svg>
-								</button>
-							</form>
-						</td>
-					</tr>
-
-					@endeach
-				</tbody>
-			</table>
-
-			<ul class="pagination py-3">
-				@each(anchor in stores.getUrlsForRange(1, stores.lastPage))
-				<li class="page-item" aria-current="page">
-					<a class="text-decoration-none" href="{{ anchor.url }}">
-						<span class="page-link custom">{{ anchor.page }}</span>
-					</a>
-				</li>
-				@endeach
-			</ul>
-		</div>
-		@endsection
+@include('admin/notifications')
+<div class="row">
+  @each(store in stores)
+  <div class="col-12 col-sm-6 col-xl-4 mb-4">
+    <div class="card border-0 shadow">
+      <div class="card-body">
+        <div class="row d-block d-xl-flex align-items-center">
+          <div class="col-12 col-xl-5 text-xl-center mb-3 mb-xl-0 d-flex
+            align-items-center justify-content-xl-center">
+            <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+              <img src="../{{ store.url_image }}" class="full-image">
+            </div>
+          </div>
+          <div class="col-12 col-xl-7 px-xl-0">
+            <div class="">
+              <h5 class="fw-extrabold mb-2">{{ store.name }}</h5>
+              <h6 class="h6 text-gray-400 mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14 2a8 8 0 0 1 3.292 15.293A8 8 0 1 1 6.706 6.707A8.003 8.003 0 0 1 14 2zm-4 6a6 6 0 1 0 0 12a6 6 0 0 0 0-12zm1 1v1h2v2H9a.5.5 0 0 0-.09.992L9 13h2a2.5 2.5 0 1 1 0 5v1H9v-1H7v-2h4a.5.5 0 0 0 .09-.992L11 15H9a2.5 2.5 0 1 1 0-5V9h2zm3-5a5.985 5.985 0 0 0-4.484 2.013a8 8 0 0 1 8.47 8.471A6 6 0 0 0 14 4z" fill="#626262"/></svg>
+                {{ store.price }}
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17.078 22.004l-1.758-4.13l-2.007 4.753l-7.52-3.29l.175 3.906l9.437 4.374l10.91-5.365l-.15-4.99l-9.087 4.742zM29.454 6.62L18.52 3.382l-3.005 2.67l-3.09-2.358L1.544 8.2l3.796 3.047l-3.43 5.303l10.88 4.756l2.53-5.998l2.256 5.308l11.393-5.942l-3.105-4.71l3.592-3.345zm-14.177 7.96l-9.06-3.83l9.276-4.102L25.1 9.903l-9.823 4.676z" fill="#626262"/></svg>
+                {{ store.amount }} <br>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 50 50"><path d="M41 19h-.272a1.966 1.966 0 0 0-.266-.365L28.918 6.267c.051-.247.082-.503.082-.767C29 3.567 27.576 2 25.818 2h-3.637C20.424 2 19 3.567 19 5.5c0 .264.032.52.082.767L7.538 18.635a2.062 2.062 0 0 0-.266.365H2v7h2v15a5 5 0 0 0 5 5h32a5 5 0 0 0 5-5V26h2v-7h-7zM22.182 9h3.637l.163-.018L35.331 19H12.669l9.35-10.018l.163.018zM13 40c0 1.1-.9 2-2 2s-2-.9-2-2V28c0-1.1.9-2 2-2s2 .9 2 2v12zm9 0c0 1.1-.9 2-2 2s-2-.9-2-2V28c0-1.1.9-2 2-2s2 .9 2 2v12zm10 0c0 1.1-.9 2-2 2s-2-.9-2-2V28c0-1.1.9-2 2-2s2 .9 2 2v12zm9 0c0 1.1-.9 2-2 2s-2-.9-2-2V28c0-1.1.9-2 2-2s2 .9 2 2v12z" fill="#626262"/></svg>
+                {{ store.purchased }}</h6>
+            </div>
+            <div class="small d-flex mt-1">
+                <div>
+                  <a href="{{ route('admin.store.edit', { id: store.id })
+                    }}">
+                    <button class="btn btn-success btn-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:
+                        rotate(360deg); -webkit-transform: rotate(360deg);
+                        transform:
+                        rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1200
+                        1200">
+                        <path
+                          d="M0 0v1200h1200V424.292l-196.875
+                          196.875v381.958h-806.25v-806.25h381.958L775.708
+                          0H0zm1050 0l-76.831
+                          76.831l150 150L1200 150L1050 0zM936.914
+                          113.086L497.168 552.832l150
+                          150l439.746-439.746l-150-150zM441.943
+                          622.339c-2.225.034-4.493.195-6.738.366v142.09h142.09c0-38.708-18.492-78.039-47.314-105.542c-23.842-22.751-54.675-37.428-88.038-36.914z"
+                          fill="#fff" />
+                      </svg>
+                    </button>
+                  </a>
+                </div>
+              <div style="margin-left:5px">
+                <form action="{{route('admin.store.destroy', { id: store.id },
+                    { qs: {
+                    _method: 'DELETE' }})}}" method="POST">
+                  {{ csrfField() }}
+                  <button class="btn btn-danger btn-sm btn-submit" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform:
+                        rotate(360deg); -webkit-transform: rotate(360deg);
+                        transform:
+                        rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20
+                        20">
+                      <g fill="none">
+                        <path d="M10 1.25a2.75 2.75 0 0 1
+                            2.739
+                            2.5H17a.75.75 0 0 1 .102 1.493L17 5.25h-.583L15.15
+                            16.23A2 2 0 0 1
+                            13.163 18H6.837a2 2 0 0 1-1.987-1.77L3.582
+                            5.25H3a.75.75 0 0
+                            1-.743-.648L2.25 4.5a.75.75 0 0 1 .648-.743L3
+                            3.75h4.261A2.75 2.75 0
+                            0 1 10 1.25zM8.5 7.5c-.245 0-.45.155-.492.359L8
+                            7.938v6.125l.008.078c.042.204.247.359.492.359s.45-.155.492-.359L9
+                            14.062V7.939l-.008-.08C8.95 7.656 8.745 7.5 8.5
+                            7.5zm3 0c-.245
+                            0-.45.155-.492.359L11
+                            7.938v6.125l.008.078c.042.204.247.359.492.359s.45-.155.492-.359l.008-.079V7.939l-.008-.08c-.042-.203-.247-.358-.492-.358zM10
+                            2.75c-.605 0-1.11.43-1.225
+                            1h2.45c-.116-.57-.62-1-1.225-1z" fill="#fff" />
+                      </g>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endeach
+</div>
+<ul class="pagination py-3">
+  @each(anchor in stores.getUrlsForRange(1, stores.lastPage))
+  <li class="page-item" aria-current="page">
+    <a class="text-decoration-none" href="{{ anchor.url }}">
+      <span class="page-link custom">{{ anchor.page }}</span>
+    </a>
+  </li>
+  @endeach
+</ul>
+@endsection

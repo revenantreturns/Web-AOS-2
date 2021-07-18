@@ -1,6 +1,27 @@
 @layout('layouts/app')
 
 @section('content')
+
+<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+      const socket = io()
+      socket.on('news', (data) => {
+        console.log(data)
+        socket.emit('my other event', { my: 'data' })
+      })
+    </script>
+
+{{ geo.range }}
+{{ geo.country }}
+{{ geo.region }}
+{{ geo.eu }}
+{{ geo.timezone }}
+{{ geo.city }}
+{{ geo.ll }}
+{{ geo.metro }}
+{{ geo.area }}
+
+
 <div class="tree">
 	<ul class="justify-content-center">
 		<li>

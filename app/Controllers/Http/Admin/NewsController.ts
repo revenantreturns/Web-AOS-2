@@ -1,5 +1,6 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import News from 'App/Models/News'
+import moment from 'moment'
 
 export default class NewsController {
   /**
@@ -16,6 +17,7 @@ export default class NewsController {
       news[j - 1].toPosition = i;
       j++;
     }
+
     news.baseUrl('/admin/news')
     return view.render('admin/news/index', { news })
   }
@@ -51,7 +53,8 @@ export default class NewsController {
    */
   public async show({ params, view }: HttpContextContract) {
     const getNew = await News.findOrFail(params.id)
-    return view.render('admin/news/show', { getNew })
+    const formatedDate = moment(new Date(getNew.created_at).getTime() * 1000).locale('pt-br').startOf('minute').fromNow()
+    return view.render('admin/news/show', { getNew, formatedDate })
   }
 
   /**

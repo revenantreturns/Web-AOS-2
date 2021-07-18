@@ -17,14 +17,14 @@ export default class News extends BaseModel {
   @column()
   public type: number
 
+  @column()
+  public created_at: number
+
+  @column()
+  public updated_at: number
+
   public toType: string
 
   public toPosition: number
-
-  @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
-
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
 
 }

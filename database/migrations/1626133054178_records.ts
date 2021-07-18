@@ -8,7 +8,8 @@ export default class Records extends BaseSchema {
       table.increments('id')
       table.string('name').notNullable()
       table.decimal('percentage').notNullable()
-      table.timestamps(true, true)
+      table.bigInteger('created_at').defaultTo(new Date().getTime() / 1000)
+      table.bigInteger('updated_at').defaultTo(new Date().getTime() / 1000)
     })
   }
 

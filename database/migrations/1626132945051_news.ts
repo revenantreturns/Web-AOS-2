@@ -10,7 +10,8 @@ export default class News extends BaseSchema {
       table.text('content').notNullable()
       table.text('writer').notNullable()
       table.integer('type').notNullable()
-      table.timestamps(true, true)
+      table.bigInteger('created_at').defaultTo(new Date().getTime() / 1000)
+      table.bigInteger('updated_at').defaultTo(new Date().getTime() / 1000)
     })
   }
 

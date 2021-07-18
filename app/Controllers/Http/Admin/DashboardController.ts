@@ -1,33 +1,23 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import moment from 'moment'
+
 
 export default class DashboardController {
 
-  public async index({view}: HttpContextContract) {
-    return view.render('admin/dashboard')
-  }
+  public async index(ctx: HttpContextContract) {
+    const user = ctx.auth.use('web').user!
 
-  public async create({}: HttpContextContract) {
+    var expires
+    
+    if (user.vip_time < new Date().getTime() / 1000){ 
+      const expiresVip = "Voce nao tem vip"
+      expires = expiresVip
+    } else {
+      const expiresVip = moment(new Date(user.vip_time).getTime() * 1000).locale('pt-br').startOf('minute').fromNow()
+      expires = expiresVip
+    }
 
-  }
-
-  public async store({}: HttpContextContract) {
-
-  }
-
-  public async show({}: HttpContextContract) {
-
-  }
-
-  public async edit({}: HttpContextContract) {
-
-  }
-
-  public async update({}: HttpContextContract) {
-
-  }
-
-  public async destroy({}: HttpContextContract) {
-
+    return ctx.view.render('admin/dashboard', { expires })
   }
 
 }

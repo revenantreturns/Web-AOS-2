@@ -11,7 +11,8 @@ export default class Guilds extends BaseSchema {
       table.text('notice').notNullable().defaultTo("Hi Members")
       table.text('description').notNullable().defaultTo("Guild News Here")
       table.text('flag').notNullable()
-      table.timestamps(true, true)
+      table.bigInteger('created_at').defaultTo(new Date().getTime() / 1000)
+      table.bigInteger('updated_at').defaultTo(new Date().getTime() / 1000)
     })
   }
 

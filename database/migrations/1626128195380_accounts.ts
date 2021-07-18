@@ -10,10 +10,11 @@ export default class Accounts extends BaseSchema {
       table.string('password').notNullable()
       table.string('email').unique().notNullable()
       table.integer('group').defaultTo(0)
-      table.timestamp('vip_time').defaultTo(this.now())
+      table.bigInteger('vip_time').defaultTo(new Date().getTime() / 1000)
       table.text('cash').defaultTo(0)
       table.string('rememberMeToken')
-      table.timestamps(true, true)
+      table.bigInteger('created_at').defaultTo(new Date().getTime() / 1000)
+      table.bigInteger('updated_at').defaultTo(new Date().getTime() / 1000)
     })
   }
 

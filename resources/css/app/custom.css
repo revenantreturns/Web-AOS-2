@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Concert One', cursive;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+    background-color: #F2F4F6;
+    -webkit-text-size-adjust: 100%;
+}
 .navbar-custom {
   background: linear-gradient(rgba(34, 34, 34, 0.95), rgba(34, 34, 34, 0.918));
   box-shadow: 0 2px 10px rgb(0 0 0 / 50%);
@@ -28,6 +39,520 @@
 .draw255   { background: transparent; width: 5px; height: 5px; float:left;}
 
 .reset { margin-top:-19px; }
+
+/**
+ * = Icon boxes
+ */
+.icon {
+    height: 2rem;
+}
+
+.icon.icon-xxs {
+    height: 1rem;
+}
+
+.icon.icon-xs {
+    height: 1.25rem;
+}
+
+.icon.icon-sm {
+    height: 1.5rem;
+}
+
+.icon.icon-lg {
+    height: 3.5rem;
+}
+
+.icon.icon-xl {
+    height: 4.5rem;
+}
+
+.icon.icon-xxl {
+    height: 6rem;
+}
+
+.icon.active-dot svg {
+    height: 0.7rem;
+}
+
+.icon-shape {
+    width: 6rem;
+    height: 6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-shape svg {
+    height: 2rem;
+}
+
+.icon-shape.icon-xxs {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icon-shape.icon-xxs svg {
+    height: 1rem;
+}
+
+.icon-shape.icon-xs {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.icon-shape.icon-xs svg {
+    height: 1.25rem;
+}
+
+.icon-shape.icon-sm {
+    width: 3.275rem;
+    height: 3.275rem;
+}
+
+.icon-shape.icon-sm svg {
+    height: 1.5rem;
+}
+
+.icon-shape.icon-lg {
+    width: 5rem;
+    height: 5rem;
+}
+
+.icon-shape.icon-lg svg {
+    height: 3.5rem;
+}
+
+.icon-shape.icon-xl {
+    width: 6rem;
+    height: 6rem;
+}
+
+.icon-shape.icon-xl svg {
+    height: 4.5rem;
+}
+
+.icon-shape.icon-xxl {
+    width: 7.5rem;
+    height: 7.5rem;
+}
+
+.icon-shape.icon-xxl svg {
+    height: 6rem;
+}
+
+.icon-shape-primary {
+    color: #1F2937;
+}
+
+.icon-shape-secondary {
+    color: #f0bc74;
+    background-color: rgba(240, 188, 116, 0.3);
+}
+
+.icon-shape-tertiary {
+    color: #31316A;
+    background-color: rgba(49, 49, 106, 0.3);
+}
+
+.icon-shape-success {
+    color: #10B981;
+    background-color: rgba(16, 185, 129, 0.3);
+}
+
+.icon-shape-info {
+    color: #2361ce;
+    background-color: rgba(35, 97, 206, 0.3);
+}
+
+.icon-shape-warning {
+    color: #f3c78e;
+    background-color: rgba(243, 199, 142, 0.3);
+}
+
+.icon-shape-danger {
+    color: #E11D48;
+    background-color: rgba(225, 29, 72, 0.3);
+}
+
+.icon-shape-white {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.icon-shape-indigo {
+    color: #4F46E5;
+    background-color: rgba(79, 70, 229, 0.3);
+}
+
+.icon-shape-purple {
+    color: #7C3AED;
+    background-color: rgba(124, 58, 237, 0.3);
+}
+
+.icon-shape-yellow-100 {
+    color: #ffeed6;
+    background-color: rgba(255, 238, 214, 0.3);
+}
+
+.icon-shape-yellow-200 {
+    color: #f5dbb8;
+    background-color: rgba(245, 219, 184, 0.3);
+}
+
+.icon-shape-gray-50 {
+    color: #F9FAFB;
+    background-color: rgba(249, 250, 251, 0.3);
+}
+
+.icon-shape-gray-100 {
+    color: #F2F4F6;
+    background-color: rgba(242, 244, 246, 0.3);
+}
+
+.icon-shape-gray-200 {
+    color: #E5E7EB;
+    background-color: rgba(229, 231, 235, 0.3);
+}
+
+.icon-shape-gray-300 {
+    color: #D1D5DB;
+    background-color: rgba(209, 213, 219, 0.3);
+}
+
+.icon-shape-gray-400 {
+    color: #9CA3AF;
+    background-color: rgba(156, 163, 175, 0.3);
+}
+
+.icon-shape-gray-500 {
+    color: #6B7280;
+    background-color: rgba(107, 114, 128, 0.3);
+}
+
+.icon-shape-gray-600 {
+    color: #4B5563;
+    background-color: rgba(75, 85, 99, 0.3);
+}
+
+.icon-shape-gray-700 {
+    color: #374151;
+    background-color: rgba(55, 65, 81, 0.3);
+}
+
+.icon-shape-gray-800 {
+    color: #1F2937;
+    background-color: rgba(31, 41, 55, 0.3);
+}
+
+.icon-shape-gray-900 {
+    color: #111827;
+    background-color: rgba(17, 24, 39, 0.3);
+}
+
+.text-primary, .text-primary:hover {
+    color: #1F2937 !important;
+}
+
+.text-primary a:not(.btn), .text-primary h1, .text-primary .h1, .text-primary h2, .text-primary .h2, .text-primary h3, .text-primary .h3, .text-primary h4, .text-primary .h4, .text-primary h5, .text-primary .h5, .text-primary h6, .text-primary .h6, .text-primary .h1, .text-primary .h2, .text-primary .h3, .text-primary .h4, .text-primary .h5, .text-primary .h6, .text-primary .display-1, .text-primary .display-2, .text-primary .display-3, .text-primary .display-4 {
+    color: #1F2937;
+}
+
+.text-primary .text-muted {
+    color: rgba(31, 41, 55, 0.7) !important;
+}
+
+.text-secondary, .text-secondary:hover {
+    color: #f0bc74 !important;
+}
+
+.text-secondary a:not(.btn), .text-secondary h1, .text-secondary .h1, .text-secondary h2, .text-secondary .h2, .text-secondary h3, .text-secondary .h3, .text-secondary h4, .text-secondary .h4, .text-secondary h5, .text-secondary .h5, .text-secondary h6, .text-secondary .h6, .text-secondary .h1, .text-secondary .h2, .text-secondary .h3, .text-secondary .h4, .text-secondary .h5, .text-secondary .h6, .text-secondary .display-1, .text-secondary .display-2, .text-secondary .display-3, .text-secondary .display-4 {
+    color: #f0bc74;
+}
+
+.text-secondary .text-muted {
+    color: rgba(240, 188, 116, 0.7) !important;
+}
+
+.text-tertiary, .text-tertiary:hover {
+    color: #31316A !important;
+}
+
+.text-tertiary a:not(.btn), .text-tertiary h1, .text-tertiary .h1, .text-tertiary h2, .text-tertiary .h2, .text-tertiary h3, .text-tertiary .h3, .text-tertiary h4, .text-tertiary .h4, .text-tertiary h5, .text-tertiary .h5, .text-tertiary h6, .text-tertiary .h6, .text-tertiary .h1, .text-tertiary .h2, .text-tertiary .h3, .text-tertiary .h4, .text-tertiary .h5, .text-tertiary .h6, .text-tertiary .display-1, .text-tertiary .display-2, .text-tertiary .display-3, .text-tertiary .display-4 {
+    color: #31316A;
+}
+
+.text-tertiary .text-muted {
+    color: rgba(49, 49, 106, 0.7) !important;
+}
+
+.text-success, .text-success:hover {
+    color: #10B981 !important;
+}
+
+.text-success a:not(.btn), .text-success h1, .text-success .h1, .text-success h2, .text-success .h2, .text-success h3, .text-success .h3, .text-success h4, .text-success .h4, .text-success h5, .text-success .h5, .text-success h6, .text-success .h6, .text-success .h1, .text-success .h2, .text-success .h3, .text-success .h4, .text-success .h5, .text-success .h6, .text-success .display-1, .text-success .display-2, .text-success .display-3, .text-success .display-4 {
+    color: #10B981;
+}
+
+.text-success .text-muted {
+    color: rgba(16, 185, 129, 0.7) !important;
+}
+
+.text-info, .text-info:hover {
+    color: #2361ce !important;
+}
+
+.text-info a:not(.btn), .text-info h1, .text-info .h1, .text-info h2, .text-info .h2, .text-info h3, .text-info .h3, .text-info h4, .text-info .h4, .text-info h5, .text-info .h5, .text-info h6, .text-info .h6, .text-info .h1, .text-info .h2, .text-info .h3, .text-info .h4, .text-info .h5, .text-info .h6, .text-info .display-1, .text-info .display-2, .text-info .display-3, .text-info .display-4 {
+    color: #2361ce;
+}
+
+.text-info .text-muted {
+    color: rgba(35, 97, 206, 0.7) !important;
+}
+
+.text-warning, .text-warning:hover {
+    color: #f3c78e !important;
+}
+
+.text-warning a:not(.btn), .text-warning h1, .text-warning .h1, .text-warning h2, .text-warning .h2, .text-warning h3, .text-warning .h3, .text-warning h4, .text-warning .h4, .text-warning h5, .text-warning .h5, .text-warning h6, .text-warning .h6, .text-warning .h1, .text-warning .h2, .text-warning .h3, .text-warning .h4, .text-warning .h5, .text-warning .h6, .text-warning .display-1, .text-warning .display-2, .text-warning .display-3, .text-warning .display-4 {
+    color: #f3c78e;
+}
+
+.text-warning .text-muted {
+    color: rgba(243, 199, 142, 0.7) !important;
+}
+
+.text-danger, .text-danger:hover {
+    color: #E11D48 !important;
+}
+
+.text-danger a:not(.btn), .text-danger h1, .text-danger .h1, .text-danger h2, .text-danger .h2, .text-danger h3, .text-danger .h3, .text-danger h4, .text-danger .h4, .text-danger h5, .text-danger .h5, .text-danger h6, .text-danger .h6, .text-danger .h1, .text-danger .h2, .text-danger .h3, .text-danger .h4, .text-danger .h5, .text-danger .h6, .text-danger .display-1, .text-danger .display-2, .text-danger .display-3, .text-danger .display-4 {
+    color: #E11D48;
+}
+
+.text-danger .text-muted {
+    color: rgba(225, 29, 72, 0.7) !important;
+}
+
+.text-white, .text-white:hover {
+    color: #ffffff !important;
+}
+
+.text-white a:not(.btn), .text-white h1, .text-white .h1, .text-white h2, .text-white .h2, .text-white h3, .text-white .h3, .text-white h4, .text-white .h4, .text-white h5, .text-white .h5, .text-white h6, .text-white .h6, .text-white .h1, .text-white .h2, .text-white .h3, .text-white .h4, .text-white .h5, .text-white .h6, .text-white .display-1, .text-white .display-2, .text-white .display-3, .text-white .display-4 {
+    color: #ffffff;
+}
+
+.text-white .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.text-indigo, .text-indigo:hover {
+    color: #4F46E5 !important;
+}
+
+.text-indigo a:not(.btn), .text-indigo h1, .text-indigo .h1, .text-indigo h2, .text-indigo .h2, .text-indigo h3, .text-indigo .h3, .text-indigo h4, .text-indigo .h4, .text-indigo h5, .text-indigo .h5, .text-indigo h6, .text-indigo .h6, .text-indigo .h1, .text-indigo .h2, .text-indigo .h3, .text-indigo .h4, .text-indigo .h5, .text-indigo .h6, .text-indigo .display-1, .text-indigo .display-2, .text-indigo .display-3, .text-indigo .display-4 {
+    color: #4F46E5;
+}
+
+.text-indigo .text-muted {
+    color: rgba(79, 70, 229, 0.7) !important;
+}
+
+.text-purple, .text-purple:hover {
+    color: #7C3AED !important;
+}
+
+.text-purple a:not(.btn), .text-purple h1, .text-purple .h1, .text-purple h2, .text-purple .h2, .text-purple h3, .text-purple .h3, .text-purple h4, .text-purple .h4, .text-purple h5, .text-purple .h5, .text-purple h6, .text-purple .h6, .text-purple .h1, .text-purple .h2, .text-purple .h3, .text-purple .h4, .text-purple .h5, .text-purple .h6, .text-purple .display-1, .text-purple .display-2, .text-purple .display-3, .text-purple .display-4 {
+    color: #7C3AED;
+}
+
+.text-purple .text-muted {
+    color: rgba(124, 58, 237, 0.7) !important;
+}
+
+.text-yellow-100, .text-yellow-100:hover {
+    color: #ffeed6 !important;
+}
+
+.text-yellow-100 a:not(.btn), .text-yellow-100 h1, .text-yellow-100 .h1, .text-yellow-100 h2, .text-yellow-100 .h2, .text-yellow-100 h3, .text-yellow-100 .h3, .text-yellow-100 h4, .text-yellow-100 .h4, .text-yellow-100 h5, .text-yellow-100 .h5, .text-yellow-100 h6, .text-yellow-100 .h6, .text-yellow-100 .h1, .text-yellow-100 .h2, .text-yellow-100 .h3, .text-yellow-100 .h4, .text-yellow-100 .h5, .text-yellow-100 .h6, .text-yellow-100 .display-1, .text-yellow-100 .display-2, .text-yellow-100 .display-3, .text-yellow-100 .display-4 {
+    color: #ffeed6;
+}
+
+.text-yellow-100 .text-muted {
+    color: rgba(255, 238, 214, 0.7) !important;
+}
+
+.text-yellow-200, .text-yellow-200:hover {
+    color: #f5dbb8 !important;
+}
+
+.text-yellow-200 a:not(.btn), .text-yellow-200 h1, .text-yellow-200 .h1, .text-yellow-200 h2, .text-yellow-200 .h2, .text-yellow-200 h3, .text-yellow-200 .h3, .text-yellow-200 h4, .text-yellow-200 .h4, .text-yellow-200 h5, .text-yellow-200 .h5, .text-yellow-200 h6, .text-yellow-200 .h6, .text-yellow-200 .h1, .text-yellow-200 .h2, .text-yellow-200 .h3, .text-yellow-200 .h4, .text-yellow-200 .h5, .text-yellow-200 .h6, .text-yellow-200 .display-1, .text-yellow-200 .display-2, .text-yellow-200 .display-3, .text-yellow-200 .display-4 {
+    color: #f5dbb8;
+}
+
+.text-yellow-200 .text-muted {
+    color: rgba(245, 219, 184, 0.7) !important;
+}
+
+.text-gray-50, .text-gray-50:hover {
+    color: #F9FAFB !important;
+}
+
+.text-gray-50 a:not(.btn), .text-gray-50 h1, .text-gray-50 .h1, .text-gray-50 h2, .text-gray-50 .h2, .text-gray-50 h3, .text-gray-50 .h3, .text-gray-50 h4, .text-gray-50 .h4, .text-gray-50 h5, .text-gray-50 .h5, .text-gray-50 h6, .text-gray-50 .h6, .text-gray-50 .h1, .text-gray-50 .h2, .text-gray-50 .h3, .text-gray-50 .h4, .text-gray-50 .h5, .text-gray-50 .h6, .text-gray-50 .display-1, .text-gray-50 .display-2, .text-gray-50 .display-3, .text-gray-50 .display-4 {
+    color: #F9FAFB;
+}
+
+.text-gray-50 .text-muted {
+    color: rgba(249, 250, 251, 0.7) !important;
+}
+
+.text-gray-100, .text-gray-100:hover {
+    color: #F2F4F6 !important;
+}
+
+.text-gray-100 a:not(.btn), .text-gray-100 h1, .text-gray-100 .h1, .text-gray-100 h2, .text-gray-100 .h2, .text-gray-100 h3, .text-gray-100 .h3, .text-gray-100 h4, .text-gray-100 .h4, .text-gray-100 h5, .text-gray-100 .h5, .text-gray-100 h6, .text-gray-100 .h6, .text-gray-100 .h1, .text-gray-100 .h2, .text-gray-100 .h3, .text-gray-100 .h4, .text-gray-100 .h5, .text-gray-100 .h6, .text-gray-100 .display-1, .text-gray-100 .display-2, .text-gray-100 .display-3, .text-gray-100 .display-4 {
+    color: #F2F4F6;
+}
+
+.text-gray-100 .text-muted {
+    color: rgba(242, 244, 246, 0.7) !important;
+}
+
+.text-gray-200, .text-gray-200:hover {
+    color: #E5E7EB !important;
+}
+
+.text-gray-200 a:not(.btn), .text-gray-200 h1, .text-gray-200 .h1, .text-gray-200 h2, .text-gray-200 .h2, .text-gray-200 h3, .text-gray-200 .h3, .text-gray-200 h4, .text-gray-200 .h4, .text-gray-200 h5, .text-gray-200 .h5, .text-gray-200 h6, .text-gray-200 .h6, .text-gray-200 .h1, .text-gray-200 .h2, .text-gray-200 .h3, .text-gray-200 .h4, .text-gray-200 .h5, .text-gray-200 .h6, .text-gray-200 .display-1, .text-gray-200 .display-2, .text-gray-200 .display-3, .text-gray-200 .display-4 {
+    color: #E5E7EB;
+}
+
+.text-gray-200 .text-muted {
+    color: rgba(229, 231, 235, 0.7) !important;
+}
+
+.text-gray-300, .text-gray-300:hover {
+    color: #D1D5DB !important;
+}
+
+.text-gray-300 a:not(.btn), .text-gray-300 h1, .text-gray-300 .h1, .text-gray-300 h2, .text-gray-300 .h2, .text-gray-300 h3, .text-gray-300 .h3, .text-gray-300 h4, .text-gray-300 .h4, .text-gray-300 h5, .text-gray-300 .h5, .text-gray-300 h6, .text-gray-300 .h6, .text-gray-300 .h1, .text-gray-300 .h2, .text-gray-300 .h3, .text-gray-300 .h4, .text-gray-300 .h5, .text-gray-300 .h6, .text-gray-300 .display-1, .text-gray-300 .display-2, .text-gray-300 .display-3, .text-gray-300 .display-4 {
+    color: #D1D5DB;
+}
+
+.text-gray-300 .text-muted {
+    color: rgba(209, 213, 219, 0.7) !important;
+}
+
+.text-gray-400, .text-gray-400:hover {
+    color: #9CA3AF !important;
+}
+
+.text-gray-400 a:not(.btn), .text-gray-400 h1, .text-gray-400 .h1, .text-gray-400 h2, .text-gray-400 .h2, .text-gray-400 h3, .text-gray-400 .h3, .text-gray-400 h4, .text-gray-400 .h4, .text-gray-400 h5, .text-gray-400 .h5, .text-gray-400 h6, .text-gray-400 .h6, .text-gray-400 .h1, .text-gray-400 .h2, .text-gray-400 .h3, .text-gray-400 .h4, .text-gray-400 .h5, .text-gray-400 .h6, .text-gray-400 .display-1, .text-gray-400 .display-2, .text-gray-400 .display-3, .text-gray-400 .display-4 {
+    color: #9CA3AF;
+}
+
+.text-gray-400 .text-muted {
+    color: rgba(156, 163, 175, 0.7) !important;
+}
+
+.text-gray-500, .text-gray-500:hover {
+    color: #6B7280 !important;
+}
+
+.text-gray-500 a:not(.btn), .text-gray-500 h1, .text-gray-500 .h1, .text-gray-500 h2, .text-gray-500 .h2, .text-gray-500 h3, .text-gray-500 .h3, .text-gray-500 h4, .text-gray-500 .h4, .text-gray-500 h5, .text-gray-500 .h5, .text-gray-500 h6, .text-gray-500 .h6, .text-gray-500 .h1, .text-gray-500 .h2, .text-gray-500 .h3, .text-gray-500 .h4, .text-gray-500 .h5, .text-gray-500 .h6, .text-gray-500 .display-1, .text-gray-500 .display-2, .text-gray-500 .display-3, .text-gray-500 .display-4 {
+    color: #6B7280;
+}
+
+.text-gray-500 .text-muted {
+    color: rgba(107, 114, 128, 0.7) !important;
+}
+
+.text-gray-600, .text-gray-600:hover {
+    color: #4B5563 !important;
+}
+
+.text-gray-600 a:not(.btn), .text-gray-600 h1, .text-gray-600 .h1, .text-gray-600 h2, .text-gray-600 .h2, .text-gray-600 h3, .text-gray-600 .h3, .text-gray-600 h4, .text-gray-600 .h4, .text-gray-600 h5, .text-gray-600 .h5, .text-gray-600 h6, .text-gray-600 .h6, .text-gray-600 .h1, .text-gray-600 .h2, .text-gray-600 .h3, .text-gray-600 .h4, .text-gray-600 .h5, .text-gray-600 .h6, .text-gray-600 .display-1, .text-gray-600 .display-2, .text-gray-600 .display-3, .text-gray-600 .display-4 {
+    color: #4B5563;
+}
+
+.text-gray-600 .text-muted {
+    color: rgba(75, 85, 99, 0.7) !important;
+}
+
+.text-gray-700, .text-gray-700:hover {
+    color: #374151 !important;
+}
+
+.text-gray-700 a:not(.btn), .text-gray-700 h1, .text-gray-700 .h1, .text-gray-700 h2, .text-gray-700 .h2, .text-gray-700 h3, .text-gray-700 .h3, .text-gray-700 h4, .text-gray-700 .h4, .text-gray-700 h5, .text-gray-700 .h5, .text-gray-700 h6, .text-gray-700 .h6, .text-gray-700 .h1, .text-gray-700 .h2, .text-gray-700 .h3, .text-gray-700 .h4, .text-gray-700 .h5, .text-gray-700 .h6, .text-gray-700 .display-1, .text-gray-700 .display-2, .text-gray-700 .display-3, .text-gray-700 .display-4 {
+    color: #374151;
+}
+
+.text-gray-700 .text-muted {
+    color: rgba(55, 65, 81, 0.7) !important;
+}
+
+.text-gray-800, .text-gray-800:hover {
+    color: #1F2937 !important;
+}
+
+.text-gray-800 a:not(.btn), .text-gray-800 h1, .text-gray-800 .h1, .text-gray-800 h2, .text-gray-800 .h2, .text-gray-800 h3, .text-gray-800 .h3, .text-gray-800 h4, .text-gray-800 .h4, .text-gray-800 h5, .text-gray-800 .h5, .text-gray-800 h6, .text-gray-800 .h6, .text-gray-800 .h1, .text-gray-800 .h2, .text-gray-800 .h3, .text-gray-800 .h4, .text-gray-800 .h5, .text-gray-800 .h6, .text-gray-800 .display-1, .text-gray-800 .display-2, .text-gray-800 .display-3, .text-gray-800 .display-4 {
+    color: #1F2937;
+}
+
+.text-gray-800 .text-muted {
+    color: rgba(31, 41, 55, 0.7) !important;
+}
+
+.text-gray-900, .text-gray-900:hover {
+    color: #111827 !important;
+}
+
+.text-gray-900 a:not(.btn), .text-gray-900 h1, .text-gray-900 .h1, .text-gray-900 h2, .text-gray-900 .h2, .text-gray-900 h3, .text-gray-900 .h3, .text-gray-900 h4, .text-gray-900 .h4, .text-gray-900 h5, .text-gray-900 .h5, .text-gray-900 h6, .text-gray-900 .h6, .text-gray-900 .h1, .text-gray-900 .h2, .text-gray-900 .h3, .text-gray-900 .h4, .text-gray-900 .h5, .text-gray-900 .h6, .text-gray-900 .display-1, .text-gray-900 .display-2, .text-gray-900 .display-3, .text-gray-900 .display-4 {
+    color: #111827;
+}
+
+.text-gray-900 .text-muted {
+    color: rgba(17, 24, 39, 0.7) !important;
+}
+
+.fw-light {
+    font-weight: 300 !important;
+}
+
+.fw-lighter {
+    font-weight: lighter !important;
+}
+
+.fw-normal {
+    font-weight: 400 !important;
+}
+
+.fw-bold {
+    font-weight: 500 !important;
+}
+
+.fw-bolder {
+    font-weight: 600 !important;
+}
+
+.fw-extrabold {
+    font-weight: 700 !important;
+}
+
+.fw-black {
+    font-weight: 800 !important;
+}
+
+.me-sm-0 {
+        margin-right: 0 !important;
+    }
+
+    .me-4 {
+    margin-right: 1.5rem !important;
+}
+
+.full-image {
+    height: 100%;
+}
 
 .bgcover{
   -webkit-background-size: cover;
@@ -1281,16 +1806,3 @@
 .material-card.Blue-Grey.mc-active .mc-btn-action {
   border-color: #ECEFF1;
 }
-body {
-  background-color: #ECEFF1;
-  color: #fff;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-}
-h1,
-h2,
-h3 {
-  font-weight: 200;
-}
-

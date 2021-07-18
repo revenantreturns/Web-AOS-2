@@ -4,6 +4,7 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
+import moment from 'moment'
 import Swal from 'sweetalert2'
 window.Swal = Swal
 import './simplebar'

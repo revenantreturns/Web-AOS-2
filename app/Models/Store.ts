@@ -2,6 +2,9 @@ import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
 export default class Store extends BaseModel {
+
+  public static table = 'store'
+
   @column({ isPrimary: true })
   public id: number
 
@@ -32,9 +35,9 @@ export default class Store extends BaseModel {
   @column()
   public item_id: number
 
-  @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
+  @column()
+  public created_at: number
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  @column()
+  public updated_at: number
 }

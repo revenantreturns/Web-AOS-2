@@ -25449,8 +25449,8 @@ label {
 }
 
 .icon-shape {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -25613,7 +25613,6 @@ label {
 
 .icon-shape-primary {
     color: #1F2937;
-    background-color: rgba(31, 41, 55, 0.3);
 }
 
 .icon-shape-secondary {

@@ -1,0 +1,55 @@
+    @if(flashMessages.has('deleted'))
+      <script>
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Deletado com sucesso',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      </script>
+    @endif
+
+    @if(flashMessages.has('updated'))
+      <script>
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Atualizado com sucesso',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      </script>
+    @endif
+
+    @if(flashMessages.has('created'))
+      <script>
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Criado com sucesso!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      </script>
+    @endif
+
+    <script>
+      $(document).on('click', '.btn-submit', function(e) {
+          e.preventDefault();
+          var form = $(this).parents('form');
+          Swal.fire({
+            title: 'Tem certeza?',
+            showDenyButton: true,
+            confirmButtonText: `Sim`,
+            denyButtonText: `Cancelar`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              form.submit();
+            } else if (result.isDenied) {
+            }
+          }).then(function (result) {
+              $('#myForm').submit();
+          });
+      });
+    </script>

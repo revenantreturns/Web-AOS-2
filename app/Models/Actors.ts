@@ -114,11 +114,11 @@ export default class Actors extends BaseModel {
   @column()
   public last_login: number
 
-  @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
+  @column()
+  public created_at: number
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  @column()
+  public updated_at: number
 
   public topPosition: number
 

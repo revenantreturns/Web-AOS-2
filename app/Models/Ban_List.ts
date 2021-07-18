@@ -3,6 +3,8 @@ import Accounts from './Accounts'
 
 export default class Ban_List extends BaseModel {
 
+  public static table = 'ban_list'
+
   @column({ isPrimary: true })
   public id: number
 

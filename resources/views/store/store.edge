@@ -1,149 +1,61 @@
 @layout('layouts/app')
 
 @section('content')
-<style>
-
-#store-list img {
-    width: 100%;
-    height: 170px;
-    border: 5px solid #ecf0f1;
-    margin-bottom: 7px;
-}
-
-#store-list h4.title-store a:hover {
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -ms-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
-    color: #f1c40f;
-}
-
-#store-list h4.title-store a {
-    color: #f39c12;
-}
-
-
-.btn.btn-default {
-    border-color: #bdc3c7;
-    background-color: #bdc3c7;
-    border: 1px solid #bdc3c7;
-}
-
-
-.btn.btn-warning {
-    border-color: #f1c40f;
-    background-color: #f1c40f;
-    border: 1px solid #f1c40f;
-}
-
-</style>
-<div class="container">
-	<div class="row bootstrap snippets bootdeys" id="store-list">
-		<div class="col-md-6 col-xs-12 bg-white">
-			<div class="panel">
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-5">
-							<a href="#"><img src="https://via.placeholder.com/300x300/FF4500/000000"
-									class="img-responsive"></a>
-						</div>
-						<div class="col-sm-7">
-							<h4 class="title-store">
-								<strong><a href="#">Product name</a></strong>
-							</h4>
-							<hr>
-							<p>Iki kie mung omah lodong dadiine rodo murah tur yo ra awet wong karang
-								mung murah, nek pingin awet yo tuku omah-omahan wae sing ra iso rusak.</p>
-							<p>
-								<a href="#" class="btn btn-default" disabled="" data-original-title=""
-									title="">$12,990</a>
-								<a href="#" class="btn btn-warning pull-right" data-original-title=""
-									title="">Buy Now</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 col-xs-12">
-			<div class="panel">
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-5">
-							<a href="#"><img src="https://via.placeholder.com/300x300/DA70D6/000000"
-									class="img-responsive"></a>
-						</div>
-						<div class="col-sm-7">
-							<h4 class="title-store">
-								<strong><a href="#">Product name</a></strong>
-							</h4>
-							<hr>
-							<p>Iki kie mung omah lodong dadiine rodo murah tur yo ra awet wong karang
-								mung murah, nek pingin awet yo tuku omah-omahan wae sing ra iso rusak.</p>
-							<p>
-								<a href="#" class="btn btn-default" disabled="" data-original-title=""
-									title="">$12,990</a>
-								<a href="#" class="btn btn-warning pull-right" data-original-title=""
-									title="">Buy Now</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 col-xs-12">
-			<div class="panel">
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-5">
-							<a href="#"><img src="https://via.placeholder.com/300x300/4169E1/000000"
-									class="img-responsive"></a>
-						</div>
-						<div class="col-sm-7">
-							<h4 class="title-store">
-								<strong><a href="#">Product name</a></strong>
-							</h4>
-							<hr>
-							<p>Iki kie mung omah lodong dadiine rodo murah tur yo ra awet wong karang
-								mung murah, nek pingin awet yo tuku omah-omahan wae sing ra iso rusak.</p>
-							<p>
-								<a href="#" class="btn btn-default" disabled="" data-original-title=""
-									title="">$12,990</a>
-								<a href="#" class="btn btn-warning pull-right" data-original-title=""
-									title="">Buy Now</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-6 col-xs-12">
-			<div class="panel">
-				<div class="panel-body">
-					<div class="row">
-						<div class="col-sm-5">
-							<a href="#"><img src="https://via.placeholder.com/300x300/40E0D0/000000"
-									class="img-responsive"></a>
-						</div>
-						<div class="col-sm-7">
-							<h4 class="title-store">
-								<strong><a href="#">Product name</a></strong>
-							</h4>
-							<hr>
-							<p>Iki kie mung omah lodong dadiine rodo murah tur yo ra awet wong karang
-								mung murah, nek pingin awet yo tuku omah-omahan wae sing ra iso rusak.</p>
-							<p>
-								<a href="#" class="btn btn-default" disabled="" data-original-title=""
-									title="">$12,990</a>
-								<a href="#" class="btn btn-warning pull-right" data-original-title=""
-									title="">Buy Now</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="row">
+  <div class="col-12 mb-4">
+    @if(auth.isLoggedIn)
+      <h5 class="mb-2 text-gray-200">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14 2a8 8 0 0 1 3.292 15.293A8 8 0 1 1 6.706 6.707A8.003 8.003 0 0 1 14 2zm-4 6a6 6 0 1 0 0 12a6 6 0 0 0 0-12zm1 1v1h2v2H9a.5.5 0 0 0-.09.992L9 13h2a2.5 2.5 0 1 1 0 5v1H9v-1H7v-2h4a.5.5 0 0 0 .09-.992L11 15H9a2.5 2.5 0 1 1 0-5V9h2zm3-5a5.985 5.985 0 0 0-4.484 2.013a8 8 0 0 1 8.47 8.471A6 6 0 0 0 14 4z" fill="#fff"/></svg>
+        Seu saldo é de:
+        {{ auth.user.cash }} {{ config.cash_name }}
+      </h5>
+    @endif
+  </div>
+  @each(store in stores)
+  <div class="col-12 col-sm-6 col-xl-4 mb-4">
+    <div class="card shadow">
+      <img src="{{ asset('assets/images/bgz.jpg') }}" class="card-img-top" alt="..." />
+      <div class="card-img-overlay">
+        <div class="row">
+          <div class="col-4 text-xl-center mb-3 mb-xl-0">
+            <div class="icon-shape icon-shape-primary rounded me-4 me-sm-0">
+              <img src="../{{ store.url_image }}" class="full-image">
+            </div>
+          </div>
+          <div class="col-7 px-xl-0">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="mb-2">{{ store.name }}</h5>
+                <h6 class="h6 mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14 2a8 8 0 0 1 3.292 15.293A8 8 0 1 1 6.706 6.707A8.003 8.003 0 0 1 14 2zm-4 6a6 6 0 1 0 0 12a6 6 0 0 0 0-12zm1 1v1h2v2H9a.5.5 0 0 0-.09.992L9 13h2a2.5 2.5 0 1 1 0 5v1H9v-1H7v-2h4a.5.5 0 0 0 .09-.992L11 15H9a2.5 2.5 0 1 1 0-5V9h2zm3-5a5.985 5.985 0 0 0-4.484 2.013a8 8 0 0 1 8.47 8.471A6 6 0 0 0 14 4z" fill="#fff"/></svg>
+                {{ store.price }} <br>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M17.078 22.004l-1.758-4.13l-2.007 4.753l-7.52-3.29l.175 3.906l9.437 4.374l10.91-5.365l-.15-4.99l-9.087 4.742zM29.454 6.62L18.52 3.382l-3.005 2.67l-3.09-2.358L1.544 8.2l3.796 3.047l-3.43 5.303l10.88 4.756l2.53-5.998l2.256 5.308l11.393-5.942l-3.105-4.71l3.592-3.345zm-14.177 7.96l-9.06-3.83l9.276-4.102L25.1 9.903l-9.823 4.676z" fill="#fff"/></svg>
+                {{ store.amount }} <br><br>
+              </div>
+              <div class="col-12">
+                  <a href="{{ route('store.show', { id: store.id })}}" class="text-decoration-none">
+                    <div class="d-grid gap-2">
+                      <button class="btn btn-secondary btn-sm">
+                        Ver
+                      </button>
+                    </div>
+                  </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endeach
 </div>
+<ul class="pagination py-3">
+  @each(anchor in stores.getUrlsForRange(1, stores.lastPage))
+  <li class="page-item" aria-current="page">
+    <a class="text-decoration-none" href="{{ anchor.url }}">
+      <span class="page-link text-gray-800">{{ anchor.page }}</span>
+    </a>
+  </li>
+  @endeach
+</ul>
 @endsection

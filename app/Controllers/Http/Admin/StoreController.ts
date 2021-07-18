@@ -43,9 +43,9 @@ export default class StoreController {
       return
     }
     var fileName = `${cuid()}.${coverImage.extname}`
-    var path = "assets/images/store/".concat(fileName)
+    var path = "images/store/".concat(fileName)
 
-    await coverImage.move(Application.resourcesPath('images/store'), {
+    await coverImage.move(Application.publicPath('images/store'), {
       name: fileName
     })
     try {
@@ -63,7 +63,7 @@ export default class StoreController {
         }
       )
       session.flash("created", "success")
-      response.redirect().back()
+      response.redirect().toRoute('admin.store.index')
     } catch {
       response.json({ error: "erro critico" })
     }
@@ -105,11 +105,11 @@ export default class StoreController {
 
     if (coverImage) {
       var fileName = `${cuid()}.${coverImage.extname}`
-      var path = "assets/images/store/".concat(fileName)
+      var path = "images/store/".concat(fileName)
       const fs = require('fs')
-      const pathUnlink = Application.resourcesPath('images/store/' + getstore.name_image + '')
+      const pathUnlink = Application.publicPath('images/store/' + getstore.name_image + '')
 
-      await coverImage.move(Application.resourcesPath('images/store'), {
+      await coverImage.move(Application.publicPath('images/store'), {
         name: fileName
       })
 
@@ -124,9 +124,8 @@ export default class StoreController {
 
     try {
       await Store.query().where('id', params.id).update({ category: category, name: name, description: description, price: price, url_image: path, name_image: fileName, amount: amount, item_id: item_id })
-
       session.flash("updated", "success")
-      response.redirect().back()
+      response.redirect().toRoute('admin.store.index')
     } catch {
       response.json({ error: "erro critico" })
     }
@@ -140,7 +139,7 @@ export default class StoreController {
   public async destroy({ params, session, response }: HttpContextContract) {
     const getStore = await Store.findOrFail(params.id)
     const fs = require('fs')
-    const path = Application.resourcesPath('images/store/' + getStore.name_image + '')
+    const path = Application.publicPath('images/store/' + getStore.name_image + '')
     try {
       await fs.unlink(path, function (err) {
         if (err) throw err

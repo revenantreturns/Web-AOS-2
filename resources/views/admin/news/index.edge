@@ -2,52 +2,11 @@
 
 @section('content')
 <div class="card card-body border-0 shadow mt-2">
-<table class="table">
-	<thead>
-		<tr>
-			<th colspan="3"><i class="fas fa-trophy"></i>&nbsp; Noticias</th>
-		</tr>
-	</thead>
+  <div class="table-responsive">
+    <table class="table table-centered table-nowrap mb-0 rounded">
 	<tbody>
-
-    @if(flashMessages.has('deleted'))
-    <script>
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Noticia deletada',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    </script>
-    @endif
-
-    @if(flashMessages.has('updated'))
-    <script>
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Noticia atualizada com sucesso',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    </script>
-    @endif
-
-    @if(flashMessages.has('created'))
-    <script>
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Noticia criada!',
-        showConfirmButton: false,
-        timer: 1500
-      })
-    </script>
-    @endif
-
+  @include('admin/notifications')
 		@each(n in news)
-
       <tr>
         <td scope="row">
           {{ n.toPosition }}
@@ -55,6 +14,11 @@
         <td>
           <small>
             <a href="{{ route('admin.news.show', { id: n.id }) }}">{{ n.title }}</a>
+          </small>
+        </td>
+        <td>
+          <small>
+            {{{ excerpt(n.content,100) }}}
           </small>
         </td>
         <td>
@@ -67,13 +31,12 @@
         <td>
           <form action="{{route('admin.news.destroy', { id: n.id }, { qs: { _method: 'DELETE' }})}}" method="POST">
               {{ csrfField() }}
-              <button class="btn btn-danger" type="submit">
+              <button class="btn btn-danger btn-submit" type="submit">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><g fill="none"><path d="M10 1.25a2.75 2.75 0 0 1 2.739 2.5H17a.75.75 0 0 1 .102 1.493L17 5.25h-.583L15.15 16.23A2 2 0 0 1 13.163 18H6.837a2 2 0 0 1-1.987-1.77L3.582 5.25H3a.75.75 0 0 1-.743-.648L2.25 4.5a.75.75 0 0 1 .648-.743L3 3.75h4.261A2.75 2.75 0 0 1 10 1.25zM8.5 7.5c-.245 0-.45.155-.492.359L8 7.938v6.125l.008.078c.042.204.247.359.492.359s.45-.155.492-.359L9 14.062V7.939l-.008-.08C8.95 7.656 8.745 7.5 8.5 7.5zm3 0c-.245 0-.45.155-.492.359L11 7.938v6.125l.008.078c.042.204.247.359.492.359s.45-.155.492-.359l.008-.079V7.939l-.008-.08c-.042-.203-.247-.358-.492-.358zM10 2.75c-.605 0-1.11.43-1.225 1h2.45c-.116-.57-.62-1-1.225-1z" fill="#fff"/></g></svg>
               </button>
           </form>
         </td>
       </tr>
-
 		@endeach
 	</tbody>
 </table>

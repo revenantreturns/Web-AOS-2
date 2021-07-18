@@ -14,10 +14,9 @@
 	<body>
         @include('admin/layouts/_partials/_navbar')
           <main class="content">
-            <div class="row">
-              <div class="col-auto">
+            @include('admin/layouts/_partials/_topbar')
+            <div class="container mt-3">
                 @!section('content')
-              </div>
             </div>
           </main>
 

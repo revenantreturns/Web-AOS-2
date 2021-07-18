@@ -1,4 +1,6 @@
- import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import Accounts from 'App/Models/Accounts';
+import CryptoJS from 'crypto-js';
 
 export default class LoginController {
 
@@ -8,8 +10,16 @@ export default class LoginController {
 
   public async auth({ auth, request, response, session }: HttpContextContract) {
     const { username, password } = request.only(['username', 'password'])
+    const hash = CryptoJS.MD5(password).toString()
     try {
-      await auth.attempt(username, password)
+      const user = await Accounts
+        .query()
+        .where('username', username)
+        .where('password', hash)
+        .firstOrFail()
+        
+      await auth.use('web').login(user)
+
       return response.redirect().toRoute('home')
     } catch {
       session.flash('errors', {

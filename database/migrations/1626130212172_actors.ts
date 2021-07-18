@@ -44,7 +44,8 @@ export default class Actors extends BaseSchema {
       table.integer('online').notNullable().defaultTo(0)
       table.text('comment').notNullable().defaultTo("Hello World!")
       table.bigInteger('last_login').notNullable()
-      table.timestamps(true, true)
+      table.bigInteger('created_at').defaultTo(new Date().getTime() / 1000)
+      table.bigInteger('updated_at').defaultTo(new Date().getTime() / 1000)
     })
   }
 

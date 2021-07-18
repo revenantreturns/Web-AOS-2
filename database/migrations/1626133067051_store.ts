@@ -1,7 +1,7 @@
 import BaseSchema from '@ioc:Adonis/Lucid/Schema'
 
 export default class Stores extends BaseSchema {
-  protected tableName = 'stores'
+  protected tableName = 'store'
 
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
@@ -15,7 +15,8 @@ export default class Stores extends BaseSchema {
       table.integer('amount').notNullable()
       table.integer('purchased').notNullable()
       table.integer('item_id').notNullable()
-      table.timestamps(true, true)
+      table.bigInteger('created_at').defaultTo(new Date().getTime() / 1000)
+      table.bigInteger('updated_at').defaultTo(new Date().getTime() / 1000)
     })
   }
 

@@ -1,9 +1,10 @@
-import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
 import { column, beforeSave, BaseModel, hasMany, HasMany, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
 import Actors from './Actors'
 import Ban_List from './Ban_List'
 import Banks from './Banks'
+import Payments from './Payments'
+import CryptoJS from 'crypto-js';
 
 export default class Accounts extends BaseModel {
 
@@ -22,6 +23,11 @@ export default class Accounts extends BaseModel {
   })
   public banks: HasOne<typeof Banks>
 
+  @hasMany(() => Payments, {
+    foreignKey: 'account_id',
+  })
+  public payments: HasMany<typeof Payments>
+
   @column({ isPrimary: true })
   public id: number
 
@@ -38,7 +44,7 @@ export default class Accounts extends BaseModel {
   public group: number
 
   @column()
-  public vip_time: DateTime
+  public vip_time: number
 
   @column()
   public cash: number
@@ -46,16 +52,15 @@ export default class Accounts extends BaseModel {
   @column()
   public rememberMeToken?: string
 
-  @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
+  @column()
+  public created_at: number
 
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  @column()
+  public updated_at: number
 
   @beforeSave()
   public static async hashPassword(accounts: Accounts) {
-    if (accounts.$dirty.password) {
-      accounts.password = await Hash.make(accounts.password)
-    }
+    var hash = CryptoJS.MD5(accounts.password).toString()
+    accounts.password = hash
   }
 }
