@@ -1,0 +1,24 @@
+@layout('layouts/app')
+
+@section('content')
+    @if(flashMessages.has('successfully'))
+        <div class="row text-center justify-content-center">
+            <div class="col-6">
+                <div class="card custom py-5">
+                    <div class="card-head">
+                        <h1>Compra concluida!</h1>
+                        <br>
+                        <img src="../../{{ item.url_image }}" class="full-image">
+                    </div>
+                    <div class="card-body">
+                        <h3>{{ item.name }}</h3>
+                        <h3>Valor: {{ item.price }}</h3>
+                        <h3>Quantidade: {{ item.amount }} {{ text }}</h3>
+												<hr>
+												<h6>{{{ item.description }}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+@endsection

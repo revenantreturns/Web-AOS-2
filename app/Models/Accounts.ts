@@ -1,10 +1,10 @@
-import Hash from '@ioc:Adonis/Core/Hash'
 import { column, beforeSave, BaseModel, hasMany, HasMany, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
 import Actors from './Actors'
 import Ban_List from './Ban_List'
 import Banks from './Banks'
 import Payments from './Payments'
 import CryptoJS from 'crypto-js';
+import Distributor from './Distributor'
 
 export default class Accounts extends BaseModel {
 
@@ -12,6 +12,11 @@ export default class Accounts extends BaseModel {
     foreignKey: 'account_id',
   })
   public actors: HasMany<typeof Actors>
+
+  @hasMany(() => Distributor, {
+    foreignKey: 'account_id',
+  })
+  public distributor: HasMany<typeof Distributor>
 
   @hasMany(() => Ban_List, {
     foreignKey: 'account_id',

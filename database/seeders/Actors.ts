@@ -6,7 +6,7 @@ export default class ActorsSeeder extends BaseSeeder {
     await Actors.createMany([
       {
         account_id: 1,
-        slot_id: 1,
+        slot_id: 0,
         name: 'Admin',
         character_name: 'Charset01',
         character_index: 0,
@@ -42,7 +42,7 @@ export default class ActorsSeeder extends BaseSeeder {
       },
       {
         account_id: 2,
-        slot_id: 1,
+        slot_id: 0,
         name: 'Lola',
         character_name: 'Charset04',
         character_index: 4,
@@ -78,7 +78,7 @@ export default class ActorsSeeder extends BaseSeeder {
       },
       {
         account_id: 3,
-        slot_id: 1,
+        slot_id: 0,
         name: 'Nietore',
         character_name: 'Charset01',
         character_index: 0,

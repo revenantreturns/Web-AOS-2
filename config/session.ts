@@ -5,7 +5,7 @@ import { SessionConfig } from '@ioc:Adonis/Addons/Session'
 const sessionConfig: SessionConfig = {
   enabled: true,
   driver: Env.get('SESSION_DRIVER'),
-  cookieName: 'adonis-session',
+  cookieName: 'vxaos',
   clearWithBrowser: false,
   age: '2h',
   cookie: {

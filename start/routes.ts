@@ -37,9 +37,14 @@ Route
   Route.get('/:id/show', 'StoresController/Store.show').as('store.show')
 
   /**
-   * SHOW STORE
+   * PAYMENT STORE
    */
-  Route.get('/:id/payment', 'StoresController/Store.payment').as('store.payment').middleware('auth')
+  Route.post('/:id/payment', 'StoresController/Store.payment').as('store.payment').middleware('auth')
+
+  /**
+   * PAYMENT SUCCESSFULLY
+   */
+  Route.get('/:id/successfully', 'StoresController/Store.successfully').as('store.success').middleware('auth')
 
   /**
    * CASH STORE PAGE

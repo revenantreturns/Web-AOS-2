@@ -11,8 +11,8 @@ export default class BankArmors extends BaseSchema {
       .unsigned()
       .references('banks.id')
       .onDelete('CASCADE')
-      table.integer('armor_id').notNullable()
-      table.integer('amount').notNullable()
+      table.integer('armor_id', 2).notNullable()
+      table.integer('amount', 2).notNullable()
     })
   }
 

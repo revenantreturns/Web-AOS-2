@@ -11,6 +11,7 @@ export default class AccountFriends extends BaseSchema {
       .unsigned()
       .references('accounts.id')
       .onDelete('CASCADE')
+      table.string('name')
     })
   }
 

@@ -9,7 +9,7 @@ export default class AccountSeeder extends BaseSeeder {
         email: 'admin@admin.com',
         password: 'admin',
         group: 2,
-        cash: 99999999
+        cash: 1000000
       },
       {
         username: 'lola',
@@ -23,7 +23,7 @@ export default class AccountSeeder extends BaseSeeder {
         email: 'nietore@nietore.com',
         password: 'nietore',
         group: 2,
-        cash: 99999999
+        cash: 1000000
       }
     ])
   }

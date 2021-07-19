@@ -1,11 +1,40 @@
-import { DateTime } from 'luxon'
-import { column, BaseModel, belongsTo, BelongsTo } from '@ioc:Adonis/Lucid/Orm'
+import { column, hasMany, HasMany, BaseModel, belongsTo, BelongsTo } from '@ioc:Adonis/Lucid/Orm'
 import Accounts from './Accounts'
+import ActorEquip from './ActorEquip'
+import ActorHotBar from './ActorHotBar'
+import ActorSkill from './ActorSkill'
+import ActorSwitch from './ActorSwitch'
+import ActorVariable from './ActorVariable'
 
 export default class Actors extends BaseModel {
 
   @column({ isPrimary: true })
   public id: number
+
+  @hasMany(() => ActorEquip, {
+    foreignKey: 'actor_id',
+  })
+  public actor_equips: HasMany<typeof ActorEquip>
+
+  @hasMany(() => ActorSkill, {
+    foreignKey: 'actor_id',
+  })
+  public actor_skill: HasMany<typeof ActorSkill>
+
+  @hasMany(() => ActorSwitch, {
+    foreignKey: 'actor_id',
+  })
+  public actor_switches: HasMany<typeof ActorSwitch>
+
+  @hasMany(() => ActorVariable, {
+    foreignKey: 'actor_id',
+  })
+  public actor_variables: HasMany<typeof ActorVariable>
+
+  @hasMany(() => ActorHotBar, {
+    foreignKey: 'actor_id',
+  })
+  public actor_hotbar: HasMany<typeof ActorHotBar>
 
   @column()
   public account_id: number
