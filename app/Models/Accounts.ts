@@ -65,7 +65,9 @@ export default class Accounts extends BaseModel {
 
   @beforeSave()
   public static async hashPassword(accounts: Accounts) {
-    var hash = CryptoJS.MD5(accounts.password).toString()
-    accounts.password = hash
+    if (accounts.$dirty.password) {
+      var hash = CryptoJS.MD5(accounts.password).toString()
+      accounts.password = hash
+    }
   }
 }

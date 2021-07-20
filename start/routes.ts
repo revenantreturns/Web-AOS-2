@@ -47,6 +47,16 @@ Route
   Route.get('/:id/successfully', 'StoresController/Store.successfully').as('store.success').middleware('auth')
 
   /**
+  * store.pix.index  /store/pix/:id/payment  (GET)
+  */
+  Route.get('pix/:id/new', 'Payments/PixController.index').as('pix.new').middleware('auth')
+
+  /**
+  * store.pix.index  /store/pix/:id/payment  (GET)
+  */
+  Route.get('pix/:id/payment', 'Payments/PixController.payment').as('pix.payment').middleware('auth')
+
+  /**
    * CASH STORE PAGE
    */
   Route.get('/cash', 'StoresController/Cash.index').as('cashpage')
@@ -63,6 +73,7 @@ Route
     * admin.dashboard.index  /admin/dashboard (GET)
     */
    Route.resource('dashboard', 'Admin/DashboardController').only(['index'])
+
 
    /**
     * admin.news.index  /admin/news (GET)

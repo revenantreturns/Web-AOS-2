@@ -1,0 +1,27 @@
+@layout('layouts/app')
+
+@section('content')
+<div class="row text-center justify-content-center">
+  <div class="col-8">
+      <div class="row justify-content-center">
+          <div class="col-12">
+              <h3> Pagamento PIX</h3>
+              ID de pagamento: {{ payment.payment_id }} <br>
+              <h3> Valor R$ {{ payment.total }}</h3>
+              <h4> Total de {{ config.cash_name }} a receber {{ payment.cash }}</h4>
+							<hr>
+          </div>
+          <div class="col-12">
+              <img src="{{ payment.imagemqrcode }}">
+          </div>
+					<div class="col-12">
+						<hr>
+						Você também pode pagar copiando a chave para o aplicativo do seu banco <br>
+						<code>{{ payment.qrcode }}</code>
+						<hr>
+						<br>
+					</div>
+      </div>
+  </div>
+</div>
+@endsection

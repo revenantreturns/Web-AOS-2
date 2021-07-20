@@ -1,4 +1,3 @@
-import { DateTime } from 'luxon'
 import { BaseModel, column, belongsTo, BelongsTo } from '@ioc:Adonis/Lucid/Orm'
 import Accounts from './Accounts'
 
@@ -24,7 +23,16 @@ export default class Payments extends BaseModel {
   public total: number
 
   @column()
-  public description: string
+  public payment_id: string
+
+  @column()
+  public cash: number
+
+  @column()
+  public qrcode: string
+
+  @column()
+  public imagemqrcode: string
 
   @column()
   public created_at: number

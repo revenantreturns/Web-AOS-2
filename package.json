@@ -31,6 +31,7 @@
     "bootstrap": "^5.0.2",
     "crypto-js": "^4.0.0",
     "geoip-lite": "^1.4.2",
+    "gn-api-sdk-node": "^2.0.5",
     "jquery": "^3.6.0",
     "luxon": "^2.0.1",
     "moment": "^2.29.1",

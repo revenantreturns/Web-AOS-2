@@ -8,7 +8,7 @@ export default class CashStore extends BaseSchema {
       table.increments('id')
       table.integer('qty').notNullable()
       table.integer('bonus').notNullable().defaultTo(0)
-      table.decimal('price').notNullable()
+      table.string('price').notNullable()
       table.integer('purchased').defaultTo(0)
       table.bigInteger('created_at').defaultTo(new Date().getTime() / 1000)
       table.bigInteger('updated_at').defaultTo(new Date().getTime() / 1000)
