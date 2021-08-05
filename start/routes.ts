@@ -37,6 +37,11 @@ Route
   Route.get('/:id/show', 'StoresController/Store.show').as('store.show')
 
   /**
+   * SHOW STORE
+   */
+    Route.get('/boxfree', 'StoresController/RewardsController.boxfree').as('store.boxfree')
+
+  /**
    * PAYMENT STORE
    */
   Route.post('/:id/payment', 'StoresController/Store.payment').as('store.payment').middleware('auth')
@@ -64,6 +69,16 @@ Route
 }).prefix('store')
 
 /**
+* ROUTE RESPONSE PAYMENT PIX
+*/
+Route.post('/paymentsuccessfully', 'Payments/PaymentSuccessfulliesController.index')
+
+/**
+* ROUTE RESPONSE PAYMENT PIX
+*/
+Route.post('/paymentsuccessfully/pix', 'Payments/PaymentSuccessfulliesController.pix')
+
+/**
  * ADMIN ROUTES
  */
  Route
@@ -74,6 +89,10 @@ Route
     */
    Route.resource('dashboard', 'Admin/DashboardController').only(['index'])
 
+   /**
+    * admin.webhook.index  /admin/webhook (GET)
+    */
+   Route.resource('webhook', 'Admin/WebHooksController').only(['index'])
 
    /**
     * admin.news.index  /admin/news (GET)
@@ -96,6 +115,28 @@ Route
     * admin.store.destroy /admin/store/:id (DELETE)
     */
    Route.resource('store', 'Admin/StoreController')
+
+   /**
+    * admin.boxfree.index  /admin/boxfree (GET)
+    * admin.boxfree.create /admin/boxfree/create
+    * admin.boxfree.store /admin/boxfree (POST)
+    * admin.boxfree.show /admin/boxfree/:id (GET)
+    * admin.boxfree.edit  /admin/boxfree/:id/edit (GET)
+    * admin.boxfree.update /admin/boxfree/:id (PUT, PATCH)
+    * admin.boxfree.destroy /admin/boxfree/:id (DELETE)
+    */
+   Route.resource('boxfree', 'Admin/BoxFreeController')
+
+   /**
+    * admin.cash.index  /admin/cash (GET)
+    * admin.cash.create /admin/cash/create
+    * admin.cash.store /admin/cash (POST)
+    * admin.cash.show /admin/cash/:id (GET)
+    * admin.cash.edit  /admin/cash/:id/edit (GET)
+    * admin.cash.update /admin/cash/:id (PUT, PATCH)
+    * admin.cash.destroy /admin/cash/:id (DELETE)
+    */
+   Route.resource('cash', 'Admin/CashController')
 
  })
  .prefix('admin')

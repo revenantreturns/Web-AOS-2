@@ -24,4 +24,6 @@ export default class CashStore extends BaseModel {
 
   @column()
   public updated_at: number
+
+  public calculate: number
 }

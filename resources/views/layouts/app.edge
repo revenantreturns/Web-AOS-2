@@ -8,20 +8,12 @@
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/app.css')
 			}}">
 	</head>
-	<body class="bgcover fixed mh-100" style="background: url('{{
-    asset('assets/images/bg.jpg') }}') no-repeat center center fixed;">
-
+	<body class="bgcover fixed h-100" style="background: url('{{
+    asset('assets/images/bg2.jpg') }}') no-repeat fixed center top #97A828;">
 			@include('layouts/_partials/_navbar')
-      <div class="container">
-        <div class="row py-3 align-items-end">
-          <div class="col-12 col-md-9"></div>
-          <div class="col-12 col-md-3">
-            <img src="{{asset('assets/images/btntest.png') }}" class="img-responsive">
-          </div>
-        </div>
-      </div>
-			<section class="section">
-				<div class="container navbar-custom mt-3 p-4">
+			<section class="section container">
+        <img src="{{ asset('assets/images/logo-circle.png') }}">
+				<div class="navbar-custom p-4">
 					<div class="row justify-content-md-center">
 						<div class="col-12 col-md-12">
 							@!section('content')

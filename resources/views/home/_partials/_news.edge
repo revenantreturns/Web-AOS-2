@@ -1,14 +1,15 @@
 
   <div class="container py-5">
-    @each(getNew in news)
-    <div class="row">
+    @each(getnw in news)
+    <div class="row py-4 navbar-custom">
       <div class="col-12">
-        <h2>{{ getNew.title }}</h2>
-        <p><small>Por <b>{{ getNew.writer }}</b> em {{ Date(getNew.created_at) }}</small></p>
+        <h2>{{ getnw.title }}</h2>
+        <p><small>Por <b>{{ getnw.writer }}</b> em {{ Date(getnw.created_at) }}</small></p>
       </div>
       <div class="col-12">
-        {{{ getNew.content  }}}
+        {{{ getnw.content  }}}
       </div>
     </div>
+    <br>
     @endeach
   </div>

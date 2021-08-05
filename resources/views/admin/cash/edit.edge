@@ -1,0 +1,39 @@
+@layout('admin/layouts/app')
+
+@section('content')
+<div class="row">
+	<div class="col-12">
+		<div class="card card-body border-0 shadow mb-4">
+			<h2 class="h5 mb-4">Editar Item</h2>
+			<form action="{{route('admin.cash.update', { id: cash.id }, { qs: { _method: 'PUT' }})}}" method="POST" enctype="multipart/form-data">
+        {{ csrfField() }}
+				<div class="row">
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="title">Quantia de Cash</label>
+							<input class="form-control" id="title" name="qty" value="{{ cash.qty }}" type="text"
+								placeholder="Quantia de Cash" required>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="title">Bonus de Cash</label>
+							<input class="form-control" id="title" name="bonus" value="{{ cash.bonus }}"  type="text"
+								placeholder="Cash Adicional" required>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="price">Preço em R$</label>
+							<input class="form-control" id="price" name="price" type="text" value="{{ cash.price }}"  placeholder="Preço em R$" required>
+						</div>
+					</div>
+				</div>
+				<div class="mt-3">
+					<button class="btn btn-gray-800 mt-2 animate-up-2" type="submit">Atualizar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+@endsection

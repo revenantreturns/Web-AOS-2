@@ -8,8 +8,8 @@ export default class DashboardController {
     const user = ctx.auth.use('web').user!
 
     var expires
-    
-    if (user.vip_time < new Date().getTime() / 1000){ 
+
+    if (user.vip_time < new Date().getTime() / 1000){
       const expiresVip = "Voce nao tem vip"
       expires = expiresVip
     } else {
@@ -17,7 +17,9 @@ export default class DashboardController {
       expires = expiresVip
     }
 
-    return ctx.view.render('admin/dashboard', { expires })
+    const number = 1
+
+    return ctx.view.render('admin/dashboard', { expires, number })
   }
 
 }

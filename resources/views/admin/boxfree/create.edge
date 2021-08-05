@@ -1,0 +1,72 @@
+@layout('admin/layouts/app')
+
+@section('content')
+<div class="row">
+	<div class="col-12">
+		<div class="card card-body border-0 shadow mb-4">
+			<h2 class="h5 mb-4">Novo item</h2>
+			<form action="{{ route('admin.boxfree.store') }}" method="post" enctype="multipart/form-data">
+        {{ csrfField() }}
+				<div class="row">
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="name">Nome</label>
+							<input class="form-control" id="name" name="name" type="text"
+								placeholder="Nome do item" required>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="item_id">Item ID</label>
+							<input class="form-control" id="item_id" name="item_id" type="number"
+								placeholder="ID do item" required>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="category_item">Categoria</label>
+							<select class="form-control" id="category_item" name="category_item">
+                <option value="0">VIP</option>
+                <option value="1">Item Geral</option>
+                <option value="2">Armas</option>
+                <option value="3">Protetores</option>
+              </select>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="rate">Taxa %</label>
+							<input class="form-control" id="rate" name="rate" type="number"
+								placeholder="Chance em % para obter" required>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="amount">Quantidade</label>
+							<input class="form-control" id="amount" name="amount" type="number"
+								placeholder="Quantidade que o jogador recebe" required>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="available">Quantia Diária</label>
+							<input class="form-control" id="available" name="available" type="number"
+								placeholder="Quantidade por dia que podem abrir" required>
+						</div>
+					</div>
+					<div class="col-md-4 mb-3">
+						<div>
+							<label for="border_color">Cor da Borda</label>
+							<input class="form-control" id="border_color" name="border_color" type="color" value="#fff"
+								placeholder="Cor da borda ao abrir" required>
+						</div>
+					</div>
+				</div>
+				<div class="mt-3">
+					<button class="btn btn-gray-800 mt-2 animate-up-2" type="submit">Validar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+@endsection

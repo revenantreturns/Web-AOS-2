@@ -23,5 +23,6 @@ export default class IndexSeeder extends BaseSeeder {
     await this.runSeeder(await import('../Configs'))
     await this.runSeeder(await import('../Guilds'))
     await this.runSeeder(await import('../News'))
+    await this.runSeeder(await import('../CashStore'))
   }
 }

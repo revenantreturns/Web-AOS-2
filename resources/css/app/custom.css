@@ -1,8 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.button-blue {
+    -webkit-transition: box-shadow 0.15s ease,-webkit-transform 0.15s ease;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    color:#F2F4F6;
+    background: radial-gradient( 100% 100% at 100% 0%, #5ADAFF 0%, #5468FF 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+}
+.button-blue:hover {
+    -webkit-transition: box-shadow 0.15s ease,-webkit-transform 0.15s ease;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    color:#F2F4F6;
+    background: radial-gradient( 100% 100% at 90% 0%, #5ADAFF 0%, #5468FF 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+}
+.button-green {
+    -webkit-transition: box-shadow 0.15s ease,-webkit-transform 0.15s ease;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    color:#F2F4F6;
+    background: radial-gradient( 100% 100% at 100% 0%, #5affb2 0%, #70ff54 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+}
+.button-green:hover {
+    -webkit-transition: box-shadow 0.15s ease,-webkit-transform 0.15s ease;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    color:#F2F4F6;
+    background: radial-gradient( 100% 100% at 90% 0%, #5ADAFF 0%, #5468FF 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+}
+
+/* only animate if the device supports hover */
+@media (hover: hover) {
+  #creditcard {
+    /*  set start position */
+    transform: translateY(110px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  #money {
+    /*  set start position */
+    transform: translateY(180px);
+    transition: transform 0.1s ease-in-out;
+    /*  set transition for mouse enter & exit */
+  }
+
+  button:hover #creditcard {
+    transform: translateY(0px);
+    transition: transform 0.2s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+
+  button:hover #money {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+    /*  overide transition for mouse enter */
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.25rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.button:hover .button__text span {
+  transform: translateY(-0.25rem);
+  transition: transform .2s ease-in-out;
+}
+
+/* styling */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+.button {
+  border: none;
+  outline: none;
+  background-color: purple;
+  padding: 1rem 90px 1rem 2rem;
+  position: relative;
+  border-radius: 8px;
+  letter-spacing: 0.7px;
+  -webkit-transition: box-shadow 0.15s ease,-webkit-transform 0.15s ease;
+    transition: box-shadow 0.15s ease,transform 0.15s ease;
+    will-change: box-shadow,transform;
+    color:#F2F4F6;
+    background: radial-gradient( 100% 100% at 100% 0%, #5ADAFF 0%, #5468FF 100% );
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  color: #fff;
+  font-size: 21px;
+  font-family: "Lato", sans-serif;
+  cursor: pointer;
+  box-shadow: rgba(0, 9, 61, 0.2) 0px 4px 8px 0px;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button__svg {
+  position: absolute;
+  overflow: visible;
+  bottom: 6px;
+  right: 0.2rem;
+  height: 140%;
+}
+
 
 body {
     margin: 0;
-    font-family: 'Concert One', cursive;
+    font-family: 'Rubik', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     color: #ddd;
@@ -10,8 +134,8 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 .navbar-custom {
-  background: linear-gradient(rgba(34, 34, 34, 0.95), rgba(34, 34, 34, 0.918));
-  box-shadow: 0 2px 10px rgb(0 0 0 / 50%);
+  background: linear-gradient(rgba(34, 34, 34, 0.95), rgba(34, 34, 34, 0.774));
+  box-shadow: 0 1px 0 rgb(255 255 255 / 15%), 0 0 10px rgb(0 0 0 / 50%) inset;
   z-index: 3;
 }
 

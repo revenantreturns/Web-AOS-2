@@ -1,14 +1,14 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Configs from 'App/Models/Configs'
 import Store from 'App/Models/Store'
-import 'moment/locale/pt-br';
+import 'moment/locale/pt-br'
 import { ItemType } from 'App/Enums/ItemType'
 
 export default class StoreController {
   /**
-   * 
-   * @param ctx 
-   * @returns 
+   *
+   * @param ctx
+   * @returns
    */
   public async index(ctx: HttpContextContract) {
     if (await ctx.auth.use("web").check()) {
@@ -23,9 +23,9 @@ export default class StoreController {
   }
 
   /**
-   * 
-   * @param ctx 
-   * @returns 
+   *
+   * @param ctx
+   * @returns
    */
   public async show(ctx: HttpContextContract) {
     if (await ctx.auth.use("web").check()) {
@@ -37,9 +37,9 @@ export default class StoreController {
   }
 
   /**
-   * 
-   * @param ctx 
-   * @returns 
+   *
+   * @param ctx
+   * @returns
    */
   public async payment(ctx: HttpContextContract) {
     const user = ctx.auth.use('web').user!
@@ -75,9 +75,9 @@ export default class StoreController {
   }
 
   /**
-   * 
-   * @param ctx 
-   * @returns 
+   *
+   * @param ctx
+   * @returns
    */
   public async successfully(ctx: HttpContextContract) {
     if (await ctx.auth.use("web").check()) {

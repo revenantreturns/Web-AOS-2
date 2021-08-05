@@ -1,0 +1,37 @@
+@layout('admin/layouts/app')
+
+@section('content')
+@include('admin/notifications')
+<div class="row">
+  @each(b in box)
+  <div class="col-12 col-md-4 mb-3">
+    <div class="card">
+      <div class="p-3 text-center">
+        <h4 class="card-title">
+          <br>
+          {{ b.name }}<br>
+          {{ b.item_id }} <br>
+          {{ b.category_item }} <br>
+          x{{ b.amount }} <br>
+          {{ b.rate }}% <br>
+          {{ b.available }} <br>
+        </h4>
+      </div>
+      <div class="card-body  d-flex">
+        <a href="{{ route('admin.boxfree.edit', { id: b.id })}}">
+            <button class="btn btn-success text-white btn-sm">
+                Editar
+            </button>
+        </a>
+        <form style="margin-left:5px;" action="{{route('admin.boxfree.destroy', { id: b.id }, { qs: { _method: 'DELETE' }})}}" method="POST">
+            {{ csrfField() }}
+            <button class="btn btn-danger btn-sm btn-submit" type="submit">
+                Excluir
+            </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  @endeach
+</div>
+@endsection

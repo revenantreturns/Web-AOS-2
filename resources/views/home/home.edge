@@ -1,9 +1,26 @@
 @layout('layouts/app')
 
 @section('content')
-
-  @include('home/_partials/_slider')
-
-  @include('home/_partials/_news')
-
+  <div class="row">
+    <div class="col-12 col-md-9">
+      <div class="row">
+        <div class="col-12">
+          @include('home/_partials/_slider')
+        </div>
+        <div class="col-12">
+          @include('home/_partials/_news')
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-3">
+      <div class="row">
+        <div class="col-12 mb-3">
+          @include('home/_partials/_rank')
+        </div>
+        <div class="col-12">
+          @include('home/_partials/_shop')
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection

@@ -6,9 +6,7 @@
 	sticky-top
 	navbar-custom
 	border-top border-5 border-info">
-	<div class="container py-3">
-		<a class="navbar-brand d-block d-sm-none" href="{{ route('home') }}">WebAos
-			2.0</a>
+	<div class="container pb-3">
 		<button
 			class="navbar-toggler"
 			type="button"
@@ -17,68 +15,54 @@
 			aria-controls="navbarSupportedContent"
 			aria-expanded="false"
 			aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z" fill="white"/><path d="M3 18a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z" fill="white"/><path d="M3 12a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2h-9.738l-2.647 2.648L4.967 13H4a1 1 0 0 1-1-1z" fill="white"/></g></svg>
 		</button>
 		<div
-			class="collapse navbar-collapse justify-content-center"
+			class="collapse navbar-collapse"
 			id="navbarSupportedContent">
 			<ul class="nav pt-3">
 				<li class="nav-item">
 					<a
-						class="nav-link text-white border-end border-secondary"
+						class="nav-link text-white text-uppercase"
 						href="{{route('home')}}">
-						HOME
+						Inicio
 					</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a
 						class="nav-link
 						dropdown-toggle
-						text-white
-						border-end border-secondary" href="#"
+						text-white text-uppercase
+						" href="#"
 						id="navbarDropdown"
 						role="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false">
-						HIGHSCORES
+						Ranking
 					</a>
 					<ul
 						class="dropdown-menu z-index navbar-custom text-white"
 						aria-labelledby="navbarDropdown">
 						<li>
-							<a class="dropdown-item custom text-white" href="{{ route('toplevel') }}">TOP LEVEL</a>
+							<a class="dropdown-item text-white text-uppercase" href="{{ route('toplevel') }}">Level</a>
 						</li>
 						<li>
-							<a class="dropdown-item custom text-white" href="{{ route('topguild') }}">GUILDS</a>
+							<a class="dropdown-item text-white text-uppercase" href="{{ route('topguild') }}">Guild</a>
 						</li>
 					</ul>
 				</li>
 				<li class="nav-item">
 					<a
-						class="navbar-brand d-none d-md-block d-lg-block"
-						href="{{ route('home') }}">
-						<img
-							src="{{ asset('assets/images/logo-circle.png') }}"
-							class="img-fluid"
-							width="100px"
-							style="margin-top: -25px; margin-left: 15px"
-							/>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a
-						class="nav-link text-white border-end border-start
-						border-secondary"
+						class="nav-link text-white text-uppercase"
 						href="{{route('cashpage')}}">
-						 COMPRAR CASH
+						 Comprar Cash
 					</a>
 				</li>
 				<li class="nav-item">
 					<a
-						class="nav-link text-white border-end border-start
-						border-secondary"
+						class="nav-link text-white text-uppercase"
 						href="{{route('store')}}">
-						 LOJA 
+						 Loja
 					</a>
 				</li>
 			</ul>

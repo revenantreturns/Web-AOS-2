@@ -26,10 +26,26 @@
 					<div class="col-md-6 mb-3">
 						<label for="category">Categoria</label>
 						<select class="form-select mb-0" id="category" name="category">
-							<option @if(store.category == 0) selected @endif value="0">VIP</option>
-							<option @if(store.category == 1) selected @endif value="1">Itens Gerais</option>
-							<option @if(store.category == 2) selected @endif value="2">Armas</option>
-							<option @if(store.category == 3) selected @endif value="3">Protetores</option>
+							<option
+                @if(store.category == 0)
+                  selected
+                @endif
+                value="0">VIP</option>
+							<option
+                @if(store.category == 1)
+                  selected
+                @endif
+                value="1">Itens Gerais</option>
+							<option
+                @if(store.category == 2)
+                  selected
+                @endif
+                value="2">Armas</option>
+							<option
+                @if(store.category == 3)
+                  selected
+                @endif
+                value="3">Protetores</option>
 						</select>
 					</div>
           <div class="col-md-6 mb-3">
