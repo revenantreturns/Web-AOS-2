@@ -1,0 +1,25 @@
+@layout('admin/layouts/app')
+
+@section('content')
+<div class="row">
+	<div class="col-12">
+		<div class="card card-body border-0 shadow mb-4">
+			<h2 class="h5 mb-4">Converter Weapon</h2>
+			<form action="{{ route('admin.weapons') }}" method="post" enctype="multipart/form-data">
+        {{ csrfField() }}
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<div class="mb-3">
+              <label for="formFile" class="form-label">Imagem</label>
+              <input class="form-control" name="filejson" type="file" id="formFile">
+            </div>
+					</div>
+				</div>
+				<div class="mt-3">
+					<button class="btn btn-gray-800 mt-2 animate-up-2" type="submit">Validar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+@endsection

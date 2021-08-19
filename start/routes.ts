@@ -78,6 +78,7 @@ Route.post('/paymentsuccessfully', 'Payments/PaymentSuccessfulliesController.ind
 */
 Route.post('/paymentsuccessfully/pix', 'Payments/PaymentSuccessfulliesController.pix')
 
+
 /**
  * ADMIN ROUTES
  */
@@ -137,6 +138,13 @@ Route.post('/paymentsuccessfully/pix', 'Payments/PaymentSuccessfulliesController
     * admin.cash.destroy /admin/cash/:id (DELETE)
     */
    Route.resource('cash', 'Admin/CashController')
+
+
+   /**
+    * Converters
+    */
+   Route.get('converter', 'Admin/ConvertersController.converter').as('converter')
+   Route.post('weapons', 'Admin/ConvertersController.weapons').as('weapons')
 
  })
  .prefix('admin')

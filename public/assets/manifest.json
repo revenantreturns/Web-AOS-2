@@ -3,6 +3,8 @@
   "assets/app.js": "http://localhost:8080/assets/app.js",
   "assets/admin.css": "http://localhost:8080/assets/admin.css",
   "assets/admin.js": "http://localhost:8080/assets/admin.js",
+  "assets/images/background.jpg": "http://localhost:8080/assets/images/background.9557337f.jpg",
+  "assets/images/bg2.jpg": "http://localhost:8080/assets/images/bg2.c1a83ef4.jpg",
   "assets/images/bgz.jpg": "http://localhost:8080/assets/images/bgz.178c897d.jpg",
   "assets/images/02.jpg": "http://localhost:8080/assets/images/02.1bb27a0a.jpg",
   "assets/images/03.jpg": "http://localhost:8080/assets/images/03.afe04857.jpg",
@@ -15,8 +17,5 @@
   "assets/images/logo-circle.png": "http://localhost:8080/assets/images/logo-circle.02a6fdc0.png",
   "assets/images/bg-shop2.jpg": "http://localhost:8080/assets/images/bg-shop2.5ad79747.jpg",
   "assets/images/bg-item.jpg": "http://localhost:8080/assets/images/bg-item.2798326c.jpg",
-  "assets/images/btntest.png": "http://localhost:8080/assets/images/btntest.610c33d1.png",
-  "assets/images/background.jpg": "http://localhost:8080/assets/images/background.9557337f.jpg",
-  "assets/images/bg2.jpg": "http://localhost:8080/assets/images/bg2.c1a83ef4.jpg",
-  "assets/images/ultrawide-1628109627606-666.jpg": "http://localhost:8080/assets/images/ultrawide-1628109627606-666.c1a83ef4.jpg"
+  "assets/images/btntest.png": "http://localhost:8080/assets/images/btntest.610c33d1.png"
 }
