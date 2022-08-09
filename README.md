@@ -1,2 +1,8 @@
 # webaos2
-with AdonisJS
+Projeto feito em AdonisJS
+
+Requerimentos:
+NodeJS v15+
+MySQL
+
+Por Nietore
